@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-neutral-700 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-neutral-800;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-secondary hover:bg-secondary-dark text-white
+           px-6 py-3.5 rounded-full font-semibold text-base transition-all duration-200
+           hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2;
+  }
+
+  .btn-outline-white {
+    @apply inline-flex items-center gap-2 border-2 border-white/50 text-white hover:bg-white/15
+           px-6 py-3.5 rounded-full font-semibold text-base transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white
+           px-6 py-3.5 rounded-full font-semibold text-base transition-all duration-200
+           hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .section-title {
+    @apply font-heading font-bold text-3xl md:text-4xl text-neutral-800 leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-neutral-500 text-lg leading-relaxed;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full tracking-wide uppercase;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-teal bg-clip-text text-transparent;
+  }
+}
+
+/* Scroll-based animation utility */
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slide-in-left  { animation: slideInFromLeft  0.7s ease-out both; }
+.animate-slide-in-right { animation: slideInFromRight 0.7s ease-out both; }
+
+/* Delay helpers */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
