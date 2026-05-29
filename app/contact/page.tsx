@@ -10,35 +10,49 @@ export const metadata: Metadata = {
 
 const offices = [
   {
-    name: 'Primary Office — Orlando',
-    address: 'Orlando, FL 32807',
+    name: 'Downtown Orlando',
+    address: '390 N Orange Ave, Suite 2300, Orlando, FL 32801',
     county: 'Orange County',
-    mapsUrl: 'https://maps.google.com/?q=Orlando+FL+32807',
+    mapsUrl: 'https://maps.google.com/?q=390+N+Orange+Ave+Suite+2300+Orlando+FL+32801',
     notes: 'Main administrative office. Counseling, testing, and supervision services.',
   },
   {
-    name: 'Altamonte Springs Office',
-    address: 'Altamonte Springs, FL 32701',
+    name: 'Lake Mary',
+    address: '255 Primera Blvd, Suite 160, Lake Mary, FL 32746',
     county: 'Seminole County',
-    mapsUrl: 'https://maps.google.com/?q=Altamonte+Springs+FL+32701',
+    mapsUrl: 'https://maps.google.com/?q=255+Primera+Blvd+Suite+160+Lake+Mary+FL+32746',
+    notes: 'Individual, couples, family counseling, and psychological evaluations.',
+  },
+  {
+    name: 'Windermere / Winter Garden',
+    address: '7208 W Sand Lake Rd, Suite 305, Orlando, FL 32819',
+    county: 'Orange County',
+    mapsUrl: 'https://maps.google.com/?q=7208+W+Sand+Lake+Rd+Suite+305+Orlando+FL+32819',
     notes: 'Individual, couples, and family counseling.',
   },
   {
-    name: 'Sanford Office',
-    address: 'Sanford, FL 32771',
-    county: 'Seminole County',
-    mapsUrl: 'https://maps.google.com/?q=Sanford+FL+32771',
-    notes: 'Individual and family counseling. Limited availability.',
+    name: 'South Orlando / Millenia',
+    address: '4700 Millenia Blvd, Suite 175, Orlando, FL 32839',
+    county: 'Orange County',
+    mapsUrl: 'https://maps.google.com/?q=4700+Millenia+Blvd+Suite+175+Orlando+FL+32839',
+    notes: 'Counseling and assessment services.',
+  },
+  {
+    name: 'Colonial Town Center',
+    address: '1060 Woodcock Rd, Orlando, FL 32803',
+    county: 'Orange County',
+    mapsUrl: 'https://maps.google.com/?q=1060+Woodcock+Rd+Orlando+FL+32803',
+    notes: 'Individual and family counseling.',
   },
 ]
 
 const hours = [
-  { day: 'Monday', hours: '9:00 AM – 6:00 PM' },
-  { day: 'Tuesday', hours: '9:00 AM – 6:00 PM' },
-  { day: 'Wednesday', hours: '9:00 AM – 6:00 PM' },
-  { day: 'Thursday', hours: '9:00 AM – 6:00 PM' },
-  { day: 'Friday', hours: '9:00 AM – 5:00 PM' },
-  { day: 'Saturday', hours: 'By Appointment Only' },
+  { day: 'Monday', hours: '9:00 AM – 7:00 PM' },
+  { day: 'Tuesday', hours: '9:00 AM – 7:00 PM' },
+  { day: 'Wednesday', hours: '9:00 AM – 7:00 PM' },
+  { day: 'Thursday', hours: '9:00 AM – 7:00 PM' },
+  { day: 'Friday', hours: '9:00 AM – 7:00 PM' },
+  { day: 'Saturday', hours: '9:00 AM – 4:00 PM' },
   { day: 'Sunday', hours: 'Closed' },
 ]
 
@@ -214,7 +228,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {offices.map((office) => (
                 <div key={office.name} className="card p-6 flex flex-col">
                   <div className="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center mb-4">

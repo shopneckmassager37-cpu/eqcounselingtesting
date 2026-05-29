@@ -15,7 +15,7 @@ const therapists = [
     name: 'Dr. Ronit Navon',
     title: 'Practice Director, PhD, LMHC, NCC',
     image: '/images/dr-ronit-navon.png',
-    bio: "Dr. Navon founded EQ Counseling & Testing in 2012 and holds a PhD in Counseling, specializing in Marriage and Family Therapy. With 22+ years in psychological evaluations, her Solution-Focused approach builds on client strengths to achieve confidence and lasting change.",
+    bio: "Dr. Navon earned her PhD in Counseling from Barry University (2009) and her Master's in Community Mental Health from Rollins College (1998). She founded EQ Counseling & Testing in 2012 and, with 22+ years in psychological evaluations, her Solution-Focused approach builds lasting confidence and positive change.",
     specialties: [
       'Bipolar Disorder & Depression',
       'Anxiety & Substance Abuse',

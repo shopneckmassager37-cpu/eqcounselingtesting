@@ -6,9 +6,9 @@ interface LogoProps {
 }
 
 export default function Logo({ variant = 'dark', size = 'md' }: LogoProps) {
-  const iconSize = size === 'sm' ? 40 : size === 'lg' ? 60 : 48
-  const titleSize = size === 'sm' ? 'text-base' : size === 'lg' ? 'text-2xl' : 'text-xl'
-  const subtitleSize = size === 'sm' ? 'text-[8px]' : size === 'lg' ? 'text-xs' : 'text-[9px]'
+  const iconSize = size === 'sm' ? 38 : size === 'lg' ? 58 : 46
+  const titleSize = size === 'sm' ? 'text-[15px]' : size === 'lg' ? 'text-[22px]' : 'text-[18px]'
+  const subtitleSize = size === 'sm' ? 'text-[8px]' : size === 'lg' ? 'text-[11px]' : 'text-[9px]'
 
   return (
     <Link href="/" className="flex items-center gap-3 group" aria-label="EQ Counseling & Testing — Home">
@@ -27,34 +27,40 @@ export default function Logo({ variant = 'dark', size = 'md' }: LogoProps) {
             <stop offset="100%" stopColor="#3D8B9E" />
           </linearGradient>
         </defs>
-        {/* Main circle */}
-        <circle cx="26" cy="26" r="25" fill="url(#logoGrad)" />
-        {/* Inner ring accent */}
-        <circle cx="26" cy="26" r="25" fill="none" stroke="white" strokeWidth="1.5" strokeOpacity="0.25" />
-        {/* EQ text */}
+
+        {/* Rounded square background */}
+        <rect x="1" y="1" width="50" height="50" rx="14" fill="url(#logoGrad)" />
+
+        {/* Subtle top glare */}
+        <rect x="1" y="1" width="50" height="26" rx="14" fill="white" fillOpacity="0.08" />
+
+        {/* Inner border */}
+        <rect x="1" y="1" width="50" height="50" rx="14" fill="none" stroke="white" strokeWidth="1" strokeOpacity="0.22" />
+
+        {/* EQ lettering */}
         <text
           x="26"
-          y="33"
+          y="27"
           textAnchor="middle"
           fill="white"
-          fontSize="20"
+          fontSize="17"
           fontWeight="800"
           fontFamily="Montserrat, sans-serif"
-          letterSpacing="-1"
+          letterSpacing="-0.5"
         >
           EQ
         </text>
-        {/* Wave decoration below EQ */}
+
+        {/* EKG / heartbeat pulse line */}
         <path
-          d="M15 40 Q19.5 37 24 40 Q28.5 43 33 40 Q36 38.5 37.5 40"
+          d="M8 37 L14 37 L17.5 30.5 L21.5 43 L25.5 33 L29.5 43 L33.5 30.5 L37 37 L44 37"
           stroke="white"
-          strokeWidth="1.5"
+          strokeWidth="1.8"
           fill="none"
           strokeLinecap="round"
-          strokeOpacity="0.6"
+          strokeLinejoin="round"
+          strokeOpacity="0.65"
         />
-        {/* Small dot accent */}
-        <circle cx="26" cy="14" r="2.5" fill="white" fillOpacity="0.5" />
       </svg>
 
       {/* Wordmark */}
@@ -64,14 +70,14 @@ export default function Logo({ variant = 'dark', size = 'md' }: LogoProps) {
             variant === 'light' ? 'text-white' : 'text-primary-dark'
           } group-hover:opacity-90 transition-opacity`}
         >
-          EQ
+          EQ Counseling
         </span>
         <span
-          className={`font-heading font-semibold ${subtitleSize} tracking-[0.18em] uppercase mt-0.5 ${
+          className={`font-heading font-semibold ${subtitleSize} tracking-[0.15em] uppercase mt-0.5 ${
             variant === 'light' ? 'text-blue-200' : 'text-teal'
           } group-hover:opacity-90 transition-opacity`}
         >
-          Counseling & Testing
+          &amp; Testing LLC
         </span>
       </div>
     </Link>

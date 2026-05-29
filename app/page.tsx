@@ -138,7 +138,7 @@ function StatsBar() {
   const stats = [
     { icon: CalendarDays, value: '2012', label: 'Founded' },
     { icon: Award, value: '22+', label: 'Years of Experience' },
-    { icon: MapPin, value: '3+', label: 'Practice Locations' },
+    { icon: MapPin, value: '5+', label: 'Practice Locations' },
     { icon: Users, value: '4', label: 'Licensed Specialists' },
   ]
 
@@ -304,10 +304,10 @@ function AboutSection() {
             <p className="text-teal font-semibold mb-5">Practice Director &amp; Licensed Mental Health Counselor</p>
 
             <p className="text-neutral-600 leading-relaxed mb-5">
-              Dr. Ronit Navon holds a PhD in Counseling and is a Licensed Mental Health Counselor (LMHC),
-              Nationally Certified Counselor (NCC), specializing in Marriage and Family Therapy. With over
-              22 years of experience in psychological evaluations, she founded EQ Counseling &amp; Testing
-              in 2012 with a mission to empower clients through a solution-focused approach.
+              Dr. Navon earned her PhD in Counseling from Barry University (2009) and her Master's in
+              Community Mental Health from Rollins College (1998). A Licensed Mental Health Counselor
+              (LMHC) and Qualified Supervisor for Florida, she founded EQ Counseling &amp; Testing in
+              2012 with a mission to empower clients through a solution-focused approach.
             </p>
 
             {/* Philosophy callout */}
@@ -471,18 +471,18 @@ function TestimonialsSection() {
 function LocationsSection() {
   const locations = [
     {
-      title: 'Orange County',
-      description: 'Our primary offices serve the Orlando metropolitan area and surrounding Orange County communities.',
-      link: 'https://maps.google.com/?q=Orlando,+FL',
+      title: 'Downtown Orlando & Surrounds',
+      description: 'Offices in Downtown Orlando, Windermere/Winter Garden, South Orlando/Millenia, and Colonial Town Center.',
+      link: 'https://maps.google.com/?q=390+N+Orange+Ave+Suite+2300+Orlando+FL+32801',
     },
     {
-      title: 'Seminole County',
-      description: 'Conveniently located offices in Seminole County for residents of Altamonte Springs, Sanford, and surrounding areas.',
-      link: 'https://maps.google.com/?q=Seminole+County,+FL',
+      title: 'Lake Mary — Seminole County',
+      description: '255 Primera Blvd, Suite 160, Lake Mary, FL 32746 — serving Seminole County and surrounding communities.',
+      link: 'https://maps.google.com/?q=255+Primera+Blvd+Suite+160+Lake+Mary+FL+32746',
     },
     {
-      title: 'Teletherapy',
-      description: 'Secure, HIPAA-compliant online sessions available throughout Florida — counseling from the comfort of your home.',
+      title: 'Teletherapy Statewide',
+      description: 'Secure, HIPAA-compliant video sessions available to all Florida residents — from anywhere, any device.',
       link: '/contact',
     },
   ]

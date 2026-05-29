@@ -10,20 +10,16 @@ export const metadata: Metadata = {
 }
 
 const counselingRates = [
-  { service: 'Initial Intake / Assessment (60 min)', rate: '$150' },
-  { service: 'Individual Therapy Session (50 min)', rate: '$120' },
-  { service: 'Couples Therapy Session (50 min)', rate: '$140' },
-  { service: 'Family Therapy Session (60 min)', rate: '$150' },
-  { service: 'Group Therapy Session', rate: '$60' },
+  { service: 'Individual Therapy Session (60 min)', rate: '$150' },
+  { service: 'Couples / Family Session (75 min)', rate: '$175' },
+  { service: 'Online / Teletherapy Session (60 min)', rate: '$80' },
   { service: 'Clinical Supervision — Group (90 min)', rate: 'Contact for rates' },
   { service: 'Clinical Supervision — Individual (50 min)', rate: 'Contact for rates' },
-  { service: 'Teletherapy Session', rate: 'Same as in-person' },
 ]
 
 const prepaidPackages = [
-  { name: '4-Session Package', desc: 'Individual Therapy', rate: '$440', savings: 'Save $40' },
-  { name: '8-Session Package', desc: 'Individual Therapy', rate: '$840', savings: 'Save $120' },
-  { name: 'Couples — 4 Sessions', desc: 'Couples Counseling', rate: '$520', savings: 'Save $40' },
+  { name: '5-Session Package', desc: 'Individual Therapy (50 min)', rate: '$650', savings: 'Best Value' },
+  { name: '5-Session Package', desc: 'Individual Therapy (60 min)', rate: '$700', savings: 'Popular' },
 ]
 
 const testingRates = [
@@ -38,9 +34,10 @@ const testingRates = [
 ]
 
 const insuranceProviders = [
-  'Aetna', 'Blue Cross Blue Shield', 'Cigna', 'Humana',
-  'Optum / UnitedHealthcare', 'Magellan Health', 'Beacon Health Options',
-  'Florida Medicaid (select plans)', 'TriCare',
+  'Aetna', 'Anthem Blue Cross Blue Shield', 'Cigna / Evernorth',
+  'Florida Blue', 'Oscar Health', 'Optum',
+  'United Healthcare / UHC', 'ComPsych', 'TRICARE',
+  'Empire Blue Cross Blue Shield', 'Medicare PPO & HMOs',
 ]
 
 const paymentMethods = [
@@ -93,7 +90,7 @@ export default function RatesPage() {
               <span className="badge bg-secondary/10 text-secondary mb-2">Value Packages</span>
               <h2 className="section-title">Prepaid Session Packages</h2>
             </div>
-            <div className="grid sm:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 max-w-xl gap-5">
               {prepaidPackages.map((pkg) => (
                 <div key={pkg.name} className="card p-6 text-center relative overflow-hidden">
                   <div className="absolute top-3 right-3 bg-secondary text-white text-xs font-bold px-2 py-0.5 rounded-full">

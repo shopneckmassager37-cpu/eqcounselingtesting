@@ -97,11 +97,11 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2.5 text-blue-200 text-sm">
               <MapPin size={15} className="mt-0.5 flex-shrink-0 text-teal" />
-              <span>Orlando, FL — Orange &amp; Seminole Counties</span>
+              <span>5 Locations — Orlando Area &amp; Lake Mary, FL</span>
             </li>
             <li className="flex items-start gap-2.5 text-blue-200 text-sm">
               <Clock size={15} className="mt-0.5 flex-shrink-0 text-teal" />
-              <span>Mon–Fri: 9am–6pm<br />Sat: By appointment</span>
+              <span>Mon–Fri: 9am–7pm<br />Sat: 9am–4pm</span>
             </li>
           </ul>
         </div>
