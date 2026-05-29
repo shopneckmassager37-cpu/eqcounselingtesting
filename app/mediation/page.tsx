@@ -83,7 +83,8 @@ export default function MediationPage() {
               <Scale className="w-10 h-10 text-accent-dark" />
             </div>
             <span className="badge bg-accent/15 text-accent-dark mb-3">EQ Divorce Mediation</span>
-            <h2 className="section-title mb-4">A Healthier Path Through Divorce</h2>
+            <h2 className="section-title mb-0">A Healthier Path Through Divorce</h2>
+            <span className="accent-bar" />
             <p className="section-subtitle">
               Specialized family mediation to help separating couples reach fair agreements while
               minimizing conflict and protecting the emotional health of the whole family.
@@ -166,8 +167,11 @@ export default function MediationPage() {
                   <div className="hidden md:block absolute top-7 left-[calc(50%+28px)] right-[-50%] h-0.5 bg-neutral-200" aria-hidden="true" />
                 )}
                 <div className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-accent/20 border-2 border-accent/40 flex items-center justify-center font-heading font-bold text-accent-dark text-lg mx-auto mb-4 relative z-10 bg-white">
-                    {step}
+                  <div className="relative w-14 h-14 mx-auto mb-4 z-10">
+                    <div className="absolute inset-0 rounded-full bg-accent/30 blur-md scale-125" />
+                    <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center font-heading font-bold text-white text-lg shadow-lg shadow-accent/30">
+                      {step}
+                    </div>
                   </div>
                   <h3 className="font-heading font-bold text-neutral-800 mb-2">{title}</h3>
                   <p className="text-neutral-500 text-sm leading-relaxed">{description}</p>

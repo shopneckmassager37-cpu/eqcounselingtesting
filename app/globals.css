@@ -84,6 +84,21 @@
     @apply inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full tracking-wide uppercase;
   }
 
+  /* Short gradient accent bar — centered under section headings */
+  .accent-bar {
+    @apply w-12 h-1 rounded-full bg-gradient-to-r from-primary to-teal mx-auto mt-2 mb-5 block;
+  }
+
+  /* Left-aligned variant (for split-layout sections) */
+  .accent-bar-left {
+    @apply w-12 h-1 rounded-full bg-gradient-to-r from-primary to-teal mt-2 mb-5 block;
+  }
+
+  /* Light variant for dark/gradient backgrounds */
+  .accent-bar-light {
+    @apply w-12 h-1 rounded-full bg-gradient-to-r from-secondary-light to-teal-light mx-auto mt-2 mb-5 block;
+  }
+
   /* Responsive table wrapper */
   .table-responsive {
     @apply overflow-x-auto -mx-4 sm:mx-0;

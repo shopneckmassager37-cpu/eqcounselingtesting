@@ -23,7 +23,8 @@ export default function SupervisionPage() {
           {/* Intro */}
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="badge bg-teal/10 text-teal mb-3">Professional Development</span>
-            <h2 className="section-title mb-4">Build Your Clinical Foundation</h2>
+            <h2 className="section-title mb-0">Build Your Clinical Foundation</h2>
+            <span className="accent-bar" />
             <p className="section-subtitle">
               Dr. Ronit Navon provides qualified clinical supervision for LMHC and LMFT post-master's
               graduates in Florida, in group or individual formats.

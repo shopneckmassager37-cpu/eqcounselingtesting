@@ -143,16 +143,22 @@ function StatsBar() {
   ]
 
   return (
-    <section className="bg-primary py-12" aria-label="Practice highlights">
-      <div className="container-custom">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+    <section className="bg-primary py-12 relative overflow-hidden" aria-label="Practice highlights">
+      {/* Top separator */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="container-custom relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 divide-x-0 md:divide-x md:divide-white/10">
           {stats.map(({ icon: Icon, value, label }, i) => (
             <div key={label} className="text-center group reveal" style={{ transitionDelay: `${i * 100}ms` }}>
-              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-white/20 transition-colors">
-                <Icon className="w-6 h-6 text-blue-200" />
+              {/* Glowing icon */}
+              <div className="relative w-14 h-14 mx-auto mb-4">
+                <div className="absolute inset-0 rounded-xl bg-white/10 blur-sm scale-110" />
+                <div className="relative w-14 h-14 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center group-hover:bg-white/25 transition-colors">
+                  <Icon className="w-7 h-7 text-blue-200" />
+                </div>
               </div>
-              <p className="font-heading font-extrabold text-3xl md:text-4xl text-white leading-none">{value}</p>
-              <p className="text-blue-200 text-sm mt-1.5 font-medium">{label}</p>
+              <p className="font-heading font-extrabold text-4xl md:text-5xl text-white leading-none tracking-tight">{value}</p>
+              <p className="text-blue-300 text-xs mt-2 font-semibold uppercase tracking-widest">{label}</p>
             </div>
           ))}
         </div>
@@ -212,9 +218,10 @@ function ServicesSection() {
       <div className="container-custom">
         <div className="text-center mb-14 reveal">
           <span className="badge bg-primary/10 text-primary mb-3">What We Offer</span>
-          <h2 id="services-heading" className="section-title mb-4">
+          <h2 id="services-heading" className="section-title mb-0">
             Comprehensive Mental Health Services
           </h2>
+          <span className="accent-bar" />
           <p className="section-subtitle max-w-2xl mx-auto">
             We offer a full spectrum of services tailored to individuals, couples, families,
             and professionals across Orange and Seminole counties.
@@ -229,8 +236,11 @@ function ServicesSection() {
               className="card p-8 flex flex-col group h-full"
               aria-label={`Learn more about ${title}`}
             >
-              <div className={`w-14 h-14 rounded-xl ${iconBg} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
-                <Icon className={`w-7 h-7 ${iconColor}`} />
+              <div className="relative w-14 h-14 mb-5">
+                <div className={`absolute -inset-1 ${iconBg} rounded-xl blur-md opacity-70`} />
+                <div className={`relative w-14 h-14 rounded-xl ${iconBg} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className={`w-7 h-7 ${iconColor}`} />
+                </div>
               </div>
               <h3 className="font-heading font-bold text-lg text-neutral-800 mb-3 leading-snug">{title}</h3>
               <p className="text-neutral-500 text-sm leading-relaxed flex-1">{description}</p>
@@ -289,7 +299,8 @@ function AboutSection() {
           {/* Right: Content */}
           <div className="reveal-right">
             <span className="badge bg-primary/10 text-primary mb-3">Meet the Director</span>
-            <h2 id="about-heading" className="section-title mb-2">Dr. Ronit Navon</h2>
+            <h2 id="about-heading" className="section-title mb-0">Dr. Ronit Navon</h2>
+            <span className="accent-bar-left" />
             <p className="text-teal font-semibold mb-5">Practice Director &amp; Licensed Mental Health Counselor</p>
 
             <p className="text-neutral-600 leading-relaxed mb-5">
@@ -363,9 +374,10 @@ function WhyUsSection() {
       <div className="container-custom">
         <div className="text-center mb-12 reveal">
           <span className="badge bg-white/20 text-blue-200 mb-3">Why Choose Us</span>
-          <h2 id="why-us-heading" className="section-title text-white mb-4">
+          <h2 id="why-us-heading" className="section-title text-white mb-0">
             The EQ Difference
           </h2>
+          <span className="accent-bar-light" />
           <p className="text-blue-100 text-lg max-w-2xl mx-auto">
             We combine clinical expertise with genuine compassion to help you navigate life's challenges.
           </p>
@@ -413,9 +425,10 @@ function TestimonialsSection() {
       <div className="container-custom">
         <div className="text-center mb-12 reveal">
           <span className="badge bg-secondary/10 text-secondary mb-3">Client Stories</span>
-          <h2 id="testimonials-heading" className="section-title mb-4">
+          <h2 id="testimonials-heading" className="section-title mb-0">
             What Our Clients Say
           </h2>
+          <span className="accent-bar" />
           <p className="section-subtitle max-w-xl mx-auto">
             Real stories from the individuals and families we've had the privilege to support.
           </p>
@@ -423,9 +436,11 @@ function TestimonialsSection() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
-            <div key={i} className="card p-8 flex flex-col reveal" style={{ transitionDelay: `${i * 120}ms` }}>
+            <div key={i} className="card p-8 flex flex-col reveal relative overflow-hidden" style={{ transitionDelay: `${i * 120}ms` }}>
+              {/* Top gradient strip */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-teal" />
               {/* Stars */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-4 mt-1">
                 {Array.from({ length: t.stars }).map((_, j) => (
                   <Star key={j} size={16} fill="currentColor" className="text-yellow-400" />
                 ))}
@@ -477,7 +492,8 @@ function LocationsSection() {
       <div className="container-custom">
         <div className="text-center mb-12 reveal">
           <span className="badge bg-teal/10 text-teal mb-3">Locations</span>
-          <h2 id="locations-heading" className="section-title mb-4">We're Here For You</h2>
+          <h2 id="locations-heading" className="section-title mb-0">We're Here For You</h2>
+          <span className="accent-bar" />
           <p className="section-subtitle max-w-xl mx-auto">
             Multiple convenient locations across Central Florida, plus teletherapy for added flexibility.
           </p>

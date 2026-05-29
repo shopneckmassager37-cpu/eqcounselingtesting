@@ -107,7 +107,8 @@ export default function CounselingPage() {
           {/* Intro */}
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="badge bg-secondary/10 text-secondary mb-3">How We Help</span>
-            <h2 className="section-title mb-4">Therapy That Meets You Where You Are</h2>
+            <h2 className="section-title mb-0">Therapy That Meets You Where You Are</h2>
+            <span className="accent-bar" />
             <p className="section-subtitle">
               Serving adults, teens, and children across Orange and Seminole counties and via
               secure teletherapy, using a solution-focused approach that builds on your strengths.
@@ -119,8 +120,11 @@ export default function CounselingPage() {
             {counselingTypes.map(({ icon: Icon, title, audience, description, treats, iconColor, iconBg }, i) => (
               <div key={title} className={`card p-8 reveal${i % 2 === 0 ? '-left' : '-right'}`} style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className="flex items-start gap-4 mb-4">
-                  <div className={`w-14 h-14 rounded-xl ${iconBg} flex items-center justify-center flex-shrink-0`}>
-                    <Icon className={`w-7 h-7 ${iconColor}`} />
+                  <div className="relative w-14 h-14 flex-shrink-0">
+                    <div className={`absolute -inset-1 ${iconBg} rounded-xl blur-md opacity-80`} />
+                    <div className={`relative w-14 h-14 rounded-xl ${iconBg} flex items-center justify-center`}>
+                      <Icon className={`w-7 h-7 ${iconColor}`} />
+                    </div>
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-lg text-neutral-800">{title}</h3>

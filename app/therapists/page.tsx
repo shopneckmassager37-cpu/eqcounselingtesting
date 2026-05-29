@@ -128,7 +128,7 @@ export default function TherapistsPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           {/* Intro */}
-          <div className="max-w-2xl mx-auto text-center mb-14">
+          <div className="max-w-2xl mx-auto text-center mb-14 reveal">
             <p className="section-subtitle">
               Our diverse team brings together specialized expertise and genuine commitment
               to each client's unique journey.

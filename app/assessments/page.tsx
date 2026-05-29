@@ -121,7 +121,8 @@ export default function AssessmentsPage() {
           {/* Intro */}
           <div className="max-w-2xl mx-auto text-center mb-14">
             <span className="badge bg-primary/10 text-primary mb-3">Our Approach</span>
-            <h2 className="section-title mb-4">Why Psychological Testing Matters</h2>
+            <h2 className="section-title mb-0">Why Psychological Testing Matters</h2>
+            <span className="accent-bar" />
             <p className="section-subtitle">
               Our multi-faceted evaluations give clinicians, educators, courts, and families
               the objective insight needed to make informed decisions.
@@ -131,9 +132,13 @@ export default function AssessmentsPage() {
           {/* Assessment types grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {assessmentTypes.map(({ icon: Icon, title, description, includes, iconColor, iconBg }, i) => (
-              <div key={title} className="card p-8 flex flex-col reveal" style={{ transitionDelay: `${i * 80}ms` }}>
-                <div className={`w-14 h-14 rounded-xl ${iconBg} flex items-center justify-center mb-5`}>
-                  <Icon className={`w-7 h-7 ${iconColor}`} />
+              <div key={title} className="card p-8 flex flex-col reveal relative overflow-hidden" style={{ transitionDelay: `${i * 80}ms` }}>
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-teal to-secondary opacity-50" />
+                <div className="relative w-14 h-14 mb-5">
+                  <div className={`absolute -inset-1 ${iconBg} rounded-xl blur-md opacity-80`} />
+                  <div className={`relative w-14 h-14 rounded-xl ${iconBg} flex items-center justify-center`}>
+                    <Icon className={`w-7 h-7 ${iconColor}`} />
+                  </div>
                 </div>
                 <h3 className="font-heading font-bold text-lg text-neutral-800 mb-3">{title}</h3>
                 <p className="text-neutral-500 text-sm leading-relaxed mb-5 flex-1">{description}</p>
@@ -181,7 +186,8 @@ export default function AssessmentsPage() {
           {/* Process */}
           <div className="mt-16 text-center">
             <span className="badge bg-teal/10 text-teal mb-3">The Process</span>
-            <h2 className="section-title mb-10">What to Expect</h2>
+            <h2 className="section-title mb-0">What to Expect</h2>
+            <span className="accent-bar" />
             <div className="grid md:grid-cols-4 gap-6">
               {[
                 { step: '01', title: 'Initial Consultation', desc: 'Discuss your needs and determine the appropriate assessment battery.' },
@@ -190,8 +196,11 @@ export default function AssessmentsPage() {
                 { step: '04', title: 'Feedback & Report', desc: 'Receive a comprehensive written report with clear findings and recommendations.' },
               ].map(({ step, title, desc }, i) => (
                 <div key={step} className="text-center reveal" style={{ transitionDelay: `${i * 100}ms` }}>
-                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center font-heading font-bold text-white text-lg mx-auto mb-4">
-                    {step}
+                  <div className="relative w-14 h-14 mx-auto mb-4">
+                    <div className="absolute inset-0 rounded-full bg-primary/30 blur-md scale-125" />
+                    <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-primary to-teal flex items-center justify-center font-heading font-bold text-white text-lg shadow-lg shadow-primary/30">
+                      {step}
+                    </div>
                   </div>
                   <h3 className="font-heading font-bold text-neutral-800 mb-2">{title}</h3>
                   <p className="text-neutral-500 text-sm leading-relaxed">{desc}</p>
