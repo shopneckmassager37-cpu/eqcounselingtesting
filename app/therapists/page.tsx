@@ -142,7 +142,8 @@ export default function TherapistsPage() {
                 key={therapist.name}
                 className={`card p-8 md:p-10 flex flex-col md:flex-row gap-8 ${
                   index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                }`}
+                } ${index % 2 === 0 ? 'reveal-left' : 'reveal-right'}`}
+                style={{ transitionDelay: `${index * 60}ms` }}
               >
                 {/* Photo + credentials */}
                 <div className="flex flex-col items-center md:items-start gap-4 md:w-64 flex-shrink-0">

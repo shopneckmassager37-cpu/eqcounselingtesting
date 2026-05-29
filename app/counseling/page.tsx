@@ -116,8 +116,8 @@ export default function CounselingPage() {
 
           {/* Counseling types */}
           <div className="grid md:grid-cols-2 gap-6 mb-16">
-            {counselingTypes.map(({ icon: Icon, title, audience, description, treats, iconColor, iconBg }) => (
-              <div key={title} className="card p-8">
+            {counselingTypes.map(({ icon: Icon, title, audience, description, treats, iconColor, iconBg }, i) => (
+              <div key={title} className={`card p-8 reveal${i % 2 === 0 ? '-left' : '-right'}`} style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className="flex items-start gap-4 mb-4">
                   <div className={`w-14 h-14 rounded-xl ${iconBg} flex items-center justify-center flex-shrink-0`}>
                     <Icon className={`w-7 h-7 ${iconColor}`} />

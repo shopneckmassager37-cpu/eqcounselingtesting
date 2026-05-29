@@ -130,8 +130,8 @@ export default function AssessmentsPage() {
 
           {/* Assessment types grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {assessmentTypes.map(({ icon: Icon, title, description, includes, iconColor, iconBg }) => (
-              <div key={title} className="card p-8 flex flex-col">
+            {assessmentTypes.map(({ icon: Icon, title, description, includes, iconColor, iconBg }, i) => (
+              <div key={title} className="card p-8 flex flex-col reveal" style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className={`w-14 h-14 rounded-xl ${iconBg} flex items-center justify-center mb-5`}>
                   <Icon className={`w-7 h-7 ${iconColor}`} />
                 </div>
@@ -188,8 +188,8 @@ export default function AssessmentsPage() {
                 { step: '02', title: 'Testing Session(s)', desc: 'Complete standardized assessments in a comfortable, supportive environment.' },
                 { step: '03', title: 'Scoring & Analysis', desc: 'Clinician analyzes results using current professional standards.' },
                 { step: '04', title: 'Feedback & Report', desc: 'Receive a comprehensive written report with clear findings and recommendations.' },
-              ].map(({ step, title, desc }) => (
-                <div key={step} className="text-center">
+              ].map(({ step, title, desc }, i) => (
+                <div key={step} className="text-center reveal" style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center font-heading font-bold text-white text-lg mx-auto mb-4">
                     {step}
                   </div>

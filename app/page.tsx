@@ -14,10 +14,10 @@ function HeroSection() {
     <section className="relative min-h-screen flex items-center overflow-hidden bg-hero-gradient" aria-label="Welcome to EQ Counseling & Testing">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-white/5" />
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-white/5 animate-float" />
         <div className="absolute bottom-0 -left-16 w-80 h-80 rounded-full bg-teal/10" />
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full border border-white/10" />
-        <div className="absolute top-1/2 right-1/3 w-32 h-32 rounded-full border border-white/10" />
+        <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full border border-white/10" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 right-1/3 w-32 h-32 rounded-full border border-white/10 animate-float" style={{ animationDelay: '3.5s' }} />
         {/* Dot grid */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -32,7 +32,7 @@ function HeroSection() {
       <div className="container-custom relative z-10 pt-36 pb-24">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
           {/* Left: Main content */}
-          <div>
+          <div className="animate-fade-in-up">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-blue-200 text-xs font-semibold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse-slow" />
               Professional Mental Health Services
@@ -76,7 +76,7 @@ function HeroSection() {
           </div>
 
           {/* Right: Floating card */}
-          <div className="hidden lg:flex justify-center items-center">
+          <div className="hidden lg:flex justify-center items-center animate-fade-in delay-300">
             <div className="relative">
               {/* Main card */}
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 max-w-sm shadow-2xl">
@@ -146,8 +146,8 @@ function StatsBar() {
     <section className="bg-primary py-12" aria-label="Practice highlights">
       <div className="container-custom">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {stats.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="text-center group">
+          {stats.map(({ icon: Icon, value, label }, i) => (
+            <div key={label} className="text-center group reveal" style={{ transitionDelay: `${i * 100}ms` }}>
               <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-white/20 transition-colors">
                 <Icon className="w-6 h-6 text-blue-200" />
               </div>
@@ -210,7 +210,7 @@ function ServicesSection() {
   return (
     <section id="services" className="section-padding bg-white" aria-labelledby="services-heading">
       <div className="container-custom">
-        <div className="text-center mb-14">
+        <div className="text-center mb-14 reveal">
           <span className="badge bg-primary/10 text-primary mb-3">What We Offer</span>
           <h2 id="services-heading" className="section-title mb-4">
             Comprehensive Mental Health Services
@@ -222,11 +222,11 @@ function ServicesSection() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {servicesData.map(({ icon: Icon, title, description, href, iconColor, iconBg }) => (
+          {servicesData.map(({ icon: Icon, title, description, href, iconColor, iconBg }, i) => (
+            <div key={href} className="reveal" style={{ transitionDelay: `${i * 90}ms` }}>
             <Link
-              key={href}
               href={href}
-              className="card p-8 flex flex-col group"
+              className="card p-8 flex flex-col group h-full"
               aria-label={`Learn more about ${title}`}
             >
               <div className={`w-14 h-14 rounded-xl ${iconBg} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
@@ -238,6 +238,7 @@ function ServicesSection() {
                 Learn more <ChevronRight size={16} />
               </div>
             </Link>
+            </div>
           ))}
         </div>
       </div>
@@ -264,7 +265,7 @@ function AboutSection() {
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
           {/* Left: Visual */}
-          <div className="flex flex-col items-center lg:items-start">
+          <div className="flex flex-col items-center lg:items-start reveal-left">
             <div className="relative">
               {/* Dr. Navon photo */}
               <div className="relative w-72 h-80 rounded-3xl overflow-hidden shadow-2xl ring-4 ring-primary/10">
@@ -286,7 +287,7 @@ function AboutSection() {
           </div>
 
           {/* Right: Content */}
-          <div>
+          <div className="reveal-right">
             <span className="badge bg-primary/10 text-primary mb-3">Meet the Director</span>
             <h2 id="about-heading" className="section-title mb-2">Dr. Ronit Navon</h2>
             <p className="text-teal font-semibold mb-5">Practice Director &amp; Licensed Mental Health Counselor</p>
@@ -360,7 +361,7 @@ function WhyUsSection() {
   return (
     <section className="section-padding bg-cta-gradient" aria-labelledby="why-us-heading">
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal">
           <span className="badge bg-white/20 text-blue-200 mb-3">Why Choose Us</span>
           <h2 id="why-us-heading" className="section-title text-white mb-4">
             The EQ Difference
@@ -371,8 +372,8 @@ function WhyUsSection() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {reasons.map(({ icon: Icon, title, description }) => (
-            <div key={title} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:bg-white/15 transition-colors">
+          {reasons.map(({ icon: Icon, title, description }, i) => (
+            <div key={title} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:bg-white/15 transition-colors reveal" style={{ transitionDelay: `${i * 100}ms` }}>
               <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mx-auto mb-4">
                 <Icon className="w-7 h-7 text-white" />
               </div>
@@ -410,7 +411,7 @@ function TestimonialsSection() {
   return (
     <section className="section-padding bg-white" aria-labelledby="testimonials-heading">
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal">
           <span className="badge bg-secondary/10 text-secondary mb-3">Client Stories</span>
           <h2 id="testimonials-heading" className="section-title mb-4">
             What Our Clients Say
@@ -422,7 +423,7 @@ function TestimonialsSection() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
-            <div key={i} className="card p-8 flex flex-col">
+            <div key={i} className="card p-8 flex flex-col reveal" style={{ transitionDelay: `${i * 120}ms` }}>
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.stars }).map((_, j) => (
@@ -474,7 +475,7 @@ function LocationsSection() {
   return (
     <section className="section-padding bg-neutral-50" aria-labelledby="locations-heading">
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal">
           <span className="badge bg-teal/10 text-teal mb-3">Locations</span>
           <h2 id="locations-heading" className="section-title mb-4">We're Here For You</h2>
           <p className="section-subtitle max-w-xl mx-auto">
@@ -483,8 +484,8 @@ function LocationsSection() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {locations.map((loc) => (
-            <div key={loc.title} className="card p-8 text-center group">
+          {locations.map((loc, i) => (
+            <div key={loc.title} className="card p-8 text-center group reveal" style={{ transitionDelay: `${i * 100}ms` }}>
               <div className="w-14 h-14 rounded-xl bg-teal/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-teal/20 transition-colors">
                 <MapPin className="w-7 h-7 text-teal" />
               </div>
@@ -519,7 +520,7 @@ function ContactSnippet() {
             <div className="absolute -bottom-8 -left-8 w-48 h-48 rounded-full bg-white/5" />
           </div>
 
-          <div className="relative z-10 text-center">
+          <div className="relative z-10 text-center reveal">
             <h2 id="contact-snippet-heading" className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">
               Ready to Begin Your Journey?
             </h2>
