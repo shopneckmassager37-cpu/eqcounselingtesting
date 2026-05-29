@@ -13,22 +13,22 @@ const benefits = [
   {
     icon: Heart,
     title: 'Less Emotional Trauma',
-    description: 'Mediation reduces the adversarial nature of separation, protecting the emotional well-being of all family members — especially children.',
+    description: 'Reduces the adversarial nature of separation, protecting the well-being of all family members, especially children.',
   },
   {
     icon: DollarSign,
     title: 'More Affordable',
-    description: 'Mediation is significantly less costly than contested litigation, allowing both parties to preserve resources for their futures.',
+    description: 'Significantly less costly than litigation, preserving resources for both parties.',
   },
   {
     icon: Clock,
     title: 'Faster Resolution',
-    description: 'Cases settled through mediation typically resolve in weeks rather than months or years of court proceedings.',
+    description: 'Typically resolves in weeks rather than months or years of court proceedings.',
   },
   {
     icon: Shield,
     title: 'Confidential Process',
-    description: 'All mediation discussions are private and confidential, unlike court proceedings which are part of the public record.',
+    description: 'Discussions are private and confidential, unlike public court proceedings.',
   },
 ]
 
@@ -36,22 +36,22 @@ const processSteps = [
   {
     step: '01',
     title: 'Initial Consultation',
-    description: 'Meet with the mediator to understand the process, discuss your situation, and determine if mediation is right for your family.',
+    description: 'Discuss your situation and determine if mediation is the right path for your family.',
   },
   {
     step: '02',
     title: 'Joint Sessions',
-    description: 'Both parties meet together with the mediator in a structured, guided environment to identify issues and explore solutions.',
+    description: 'Meet with the mediator in a structured environment to identify issues and explore solutions.',
   },
   {
     step: '03',
     title: 'Private Caucuses',
-    description: 'When needed, the mediator meets separately with each party to explore concerns and options in a confidential setting.',
+    description: 'The mediator meets separately with each party as needed to explore concerns privately.',
   },
   {
     step: '04',
     title: 'Agreement Drafting',
-    description: 'Once consensus is reached, a written Memorandum of Understanding is prepared for attorney review and court submission.',
+    description: 'A Memorandum of Understanding is prepared for attorney review and court submission.',
   },
 ]
 
@@ -85,9 +85,8 @@ export default function MediationPage() {
             <span className="badge bg-accent/15 text-accent-dark mb-3">EQ Divorce Mediation</span>
             <h2 className="section-title mb-4">A Healthier Path Through Divorce</h2>
             <p className="section-subtitle">
-              EQ Counseling &amp; Testing offers specialized family mediation services designed
-              to help separating couples reach fair, lasting agreements while minimizing conflict
-              and protecting the emotional health of the entire family — especially children.
+              Specialized family mediation to help separating couples reach fair agreements while
+              minimizing conflict and protecting the emotional health of the whole family.
             </p>
           </div>
 
@@ -111,8 +110,7 @@ export default function MediationPage() {
               <span className="badge bg-accent/15 text-accent-dark mb-4">What We Address</span>
               <h2 className="section-title mb-4">Issues Covered in Mediation</h2>
               <p className="text-neutral-500 text-sm leading-relaxed mb-6">
-                Our mediation process covers all the key issues involved in family separation,
-                helping you reach comprehensive agreements without court intervention.
+                Covers all key issues in family separation for comprehensive agreements without court.
               </p>
               <div className="grid grid-cols-1 gap-2">
                 {issuesCovered.map((issue) => (
@@ -185,10 +183,8 @@ export default function MediationPage() {
                 <span className="badge bg-accent/15 text-accent-dark mb-3">Is This Right for You?</span>
                 <h2 className="section-title mb-4">Who Can Benefit from Mediation?</h2>
                 <p className="text-neutral-500 leading-relaxed">
-                  Mediation is most effective when both parties are willing to communicate
-                  respectfully and work toward mutually acceptable solutions. It is particularly
-                  valuable for families with children who wish to minimize conflict and maintain
-                  a cooperative co-parenting relationship.
+                  Mediation works best when both parties are willing to communicate respectfully
+                  toward mutually acceptable solutions, especially for families with children.
                 </p>
               </div>
               <ul className="space-y-3">

@@ -14,7 +14,7 @@ const assessmentTypes = [
     icon: BookOpen,
     title: 'Academic Testing',
     description:
-      'Comprehensive academic assessments to identify learning strengths and challenges, inform educational planning, and qualify students for special education services or accommodations.',
+      'Identifies learning strengths and challenges to inform educational planning and qualify students for accommodations.',
     includes: [
       'Reading & Reading Comprehension',
       'Mathematics Achievement',
@@ -28,7 +28,7 @@ const assessmentTypes = [
     icon: Brain,
     title: 'Intelligence Testing (IQ)',
     description:
-      'Standardized intelligence assessments that measure cognitive abilities, processing speed, memory, and reasoning to provide a comprehensive picture of intellectual functioning.',
+      'Measures cognitive abilities, processing speed, memory, and reasoning for a clear picture of intellectual functioning.',
     includes: [
       'Cognitive Abilities Assessment',
       'Processing Speed Evaluation',
@@ -42,7 +42,7 @@ const assessmentTypes = [
     icon: Lightbulb,
     title: 'DSM-5 Diagnostic Evaluation',
     description:
-      'Thorough clinical assessments for mental health diagnosis including ADHD, Depression, Anxiety, Bipolar Disorder, and other conditions using current DSM-5 criteria.',
+      'Clinical diagnosis of ADHD, Depression, Anxiety, Bipolar Disorder, and other conditions using current DSM-5 criteria.',
     includes: [
       'ADHD Evaluation (Adults & Children)',
       'Depression & Anxiety Diagnosis',
@@ -56,7 +56,7 @@ const assessmentTypes = [
     icon: Dna,
     title: 'Autism / Spectrum Disorder',
     description:
-      'Specialized evaluations for Autism Spectrum Disorder (ASD) using evidence-based protocols and behavioral observations across multiple settings.',
+      'Evidence-based ASD evaluations using behavioral observation protocols across home, school, and clinical settings.',
     includes: [
       'ADOS-2 Administration',
       'Adaptive Behavior Assessment',
@@ -70,7 +70,7 @@ const assessmentTypes = [
     icon: Briefcase,
     title: 'Career Assessment',
     description:
-      'Identify your strengths, interests, and aptitudes to make informed career decisions. Suitable for students, career changers, and professionals seeking clarity.',
+      'Identify your strengths, interests, and aptitudes to guide career decisions — for students, career changers, and professionals.',
     includes: [
       'Interest Inventory',
       'Skills & Aptitude Assessment',
@@ -84,7 +84,7 @@ const assessmentTypes = [
     icon: User,
     title: 'Personality Assessment',
     description:
-      'In-depth personality evaluations to understand behavioral patterns, emotional functioning, and psychological strengths — used for clinical, legal, and personal growth purposes.',
+      'Evaluates behavioral patterns, emotional functioning, and psychological strengths for clinical, legal, and personal growth purposes.',
     includes: [
       'MMPI-3 Administration',
       'Projective Techniques',
@@ -119,14 +119,12 @@ export default function AssessmentsPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           {/* Intro */}
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-2xl mx-auto text-center mb-14">
             <span className="badge bg-primary/10 text-primary mb-3">Our Approach</span>
             <h2 className="section-title mb-4">Why Psychological Testing Matters</h2>
             <p className="section-subtitle">
-              Psychological evaluations provide objective, evidence-based information that helps
-              clinicians, educators, courts, and — most importantly — you or your family member,
-              understand cognitive functioning, emotional state, and behavioral patterns. Our
-              multi-faceted approach ensures comprehensive, accurate results.
+              Our multi-faceted evaluations give clinicians, educators, courts, and families
+              the objective insight needed to make informed decisions.
             </p>
           </div>
 
@@ -161,9 +159,8 @@ export default function AssessmentsPage() {
                 <span className="badge bg-primary/10 text-primary mb-3">Specialized Services</span>
                 <h2 className="section-title mb-4">Forensic & Specialized Evaluations</h2>
                 <p className="text-neutral-500 leading-relaxed mb-6">
-                  Dr. Ronit Navon brings extensive expertise in specialized psychological
-                  evaluations for legal, medical, and social service contexts. These assessments
-                  follow rigorous professional standards and result in comprehensive written reports.
+                  Dr. Ronit Navon provides specialized psychological evaluations for legal, medical,
+                  and social service contexts, each resulting in a comprehensive written report.
                 </p>
                 <Link href="/contact" className="btn-primary">
                   Request an Evaluation

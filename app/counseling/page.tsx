@@ -15,7 +15,7 @@ const counselingTypes = [
     title: 'Individual Counseling',
     audience: 'Adults • Geriatric',
     description:
-      'One-on-one therapy tailored to your unique needs, goals, and pace. Our therapists create a safe, non-judgmental space for personal growth, healing, and self-discovery.',
+      'One-on-one therapy tailored to your needs in a safe, non-judgmental space for growth and healing.',
     treats: [
       'Depression & Low Mood',
       'Anxiety & Panic Attacks',
@@ -34,7 +34,7 @@ const counselingTypes = [
     title: 'Couples & Marriage Counseling',
     audience: 'Couples • Married Pairs',
     description:
-      'Rebuild connection, improve communication, and resolve conflict in a structured, compassionate therapeutic environment. We work with couples at all stages of their relationship.',
+      'Rebuild connection and improve communication in a structured, compassionate setting — for couples at any stage.',
     treats: [
       'Communication Breakdown',
       'Trust & Infidelity Issues',
@@ -52,7 +52,7 @@ const counselingTypes = [
     title: 'Family Therapy',
     audience: 'Families • All Ages',
     description:
-      'Strengthen family bonds, navigate conflict, and build healthier communication patterns. We work with the whole family system to create lasting positive change.',
+      'Strengthen family bonds and build healthier communication across the whole family system.',
     treats: [
       'Parent-Child Conflict',
       'Blended Family Adjustment',
@@ -69,7 +69,7 @@ const counselingTypes = [
     title: 'Teens & Children',
     audience: 'Children • Adolescents',
     description:
-      'Age-appropriate, engaging therapy for young people dealing with emotional, behavioral, and developmental challenges. We use play therapy, CBT, and other child-friendly modalities.',
+      'Age-appropriate therapy for children and teens using play therapy, CBT, and other child-friendly modalities.',
     treats: [
       'ADHD & Attention Issues',
       'School Anxiety & Refusal',
@@ -109,10 +109,8 @@ export default function CounselingPage() {
             <span className="badge bg-secondary/10 text-secondary mb-3">How We Help</span>
             <h2 className="section-title mb-4">Therapy That Meets You Where You Are</h2>
             <p className="section-subtitle">
-              EQ Counseling &amp; Testing provides counseling for adults, geriatric clients,
-              teens, and children at convenient locations across Orange and Seminole counties,
-              as well as through secure teletherapy. Our solution-focused approach helps you
-              identify strengths and build toward your goals.
+              Serving adults, teens, and children across Orange and Seminole counties and via
+              secure teletherapy, using a solution-focused approach that builds on your strengths.
             </p>
           </div>
 
@@ -170,9 +168,8 @@ export default function CounselingPage() {
                 </div>
                 <h2 className="section-title mb-4">Teletherapy Available</h2>
                 <p className="text-neutral-500 leading-relaxed mb-6">
-                  We offer secure, HIPAA-compliant video counseling sessions throughout Florida.
-                  Teletherapy provides the same quality of care as in-person sessions with the
-                  added convenience of joining from home, work, or anywhere private.
+                  Secure, HIPAA-compliant video counseling available statewide — same quality
+                  care with the flexibility to join from anywhere.
                 </p>
                 <Link href="/contact" className="btn-secondary">
                   Schedule a Teletherapy Session

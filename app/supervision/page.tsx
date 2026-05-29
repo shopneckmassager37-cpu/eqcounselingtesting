@@ -26,8 +26,7 @@ export default function SupervisionPage() {
             <h2 className="section-title mb-4">Build Your Clinical Foundation</h2>
             <p className="section-subtitle">
               Dr. Ronit Navon provides qualified clinical supervision for LMHC and LMFT post-master's
-              graduates in Florida. Whether you prefer the collaborative atmosphere of group supervision
-              or the focused attention of individual sessions, we have a format that fits your needs.
+              graduates in Florida, in group or individual formats.
             </p>
           </div>
 
@@ -41,9 +40,8 @@ export default function SupervisionPage() {
               <h2 className="font-heading font-bold text-2xl text-neutral-800 mb-2">Group Supervision</h2>
               <p className="text-teal font-semibold text-sm mb-4">Collaborative Learning Environment</p>
               <p className="text-neutral-500 leading-relaxed mb-6">
-                Our group supervision sessions bring together a small cohort of supervisees to
-                discuss cases, share perspectives, and learn from one another under Dr. Navon's
-                expert guidance. Group supervision fosters peer learning and professional community.
+                Small-cohort sessions to discuss cases, share perspectives, and build professional
+                community under Dr. Navon's guidance.
               </p>
 
               <div className="space-y-3 mb-6">
@@ -99,9 +97,8 @@ export default function SupervisionPage() {
               <h2 className="font-heading font-bold text-2xl text-neutral-800 mb-2">Individual Supervision</h2>
               <p className="text-primary font-semibold text-sm mb-4">Personalized Mentorship</p>
               <p className="text-neutral-500 leading-relaxed mb-6">
-                Individual supervision provides dedicated one-on-one time with Dr. Navon for
-                in-depth case review, personal and professional development, and targeted feedback
-                tailored to your specific practice areas and growth goals.
+                Dedicated one-on-one time with Dr. Navon for in-depth case review, professional
+                development, and targeted feedback.
               </p>
 
               <div className="space-y-3 mb-6">
@@ -158,8 +155,7 @@ export default function SupervisionPage() {
                 <h2 className="section-title mb-4">Supervisee Requirements</h2>
                 <p className="text-neutral-500 leading-relaxed mb-6">
                   To begin supervised clinical hours, you must meet Florida's requirements
-                  for registered intern status. Below is what you'll need to get started
-                  with Dr. Navon's supervision program.
+                  for registered intern status.
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -209,10 +205,8 @@ export default function SupervisionPage() {
             </div>
             <h2 className="font-heading font-bold text-3xl text-white mb-4">Your Supervisor</h2>
             <p className="text-blue-100 leading-relaxed mb-6">
-              Dr. Ronit Navon — PhD, LMHC, NCC — brings over 22 years of clinical experience
-              and a deep commitment to mentoring the next generation of mental health professionals.
-              Her supervision style is warm, direct, and rooted in a solution-focused philosophy that
-              empowers supervisees to find their own professional voice.
+              Dr. Ronit Navon — PhD, LMHC, NCC — brings 22+ years of clinical experience and a
+              solution-focused philosophy that empowers supervisees to find their own professional voice.
             </p>
             <div className="flex justify-center gap-4">
               <Link href="/contact" className="btn-primary">
