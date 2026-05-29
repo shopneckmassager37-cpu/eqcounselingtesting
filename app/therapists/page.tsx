@@ -15,7 +15,7 @@ const therapists = [
     name: 'Dr. Ronit Navon',
     title: 'Practice Director, PhD, LMHC, NCC',
     image: '/images/dr-ronit-navon.png',
-    bio: "Dr. Ronit Navon founded EQ Counseling & Testing in 2012 and serves as Practice Director. She holds a PhD in Counseling and is a Licensed Mental Health Counselor and Nationally Certified Counselor specializing in Marriage and Family Therapy. With over 22 years of experience in psychological evaluations, Dr. Navon's primary intervention approach is Solution-Focused Theory, emphasizing client strengths and cognitive processes to build confidence, hope, and positive outcomes.",
+    bio: "Dr. Navon founded EQ Counseling & Testing in 2012 and holds a PhD in Counseling, specializing in Marriage and Family Therapy. With 22+ years in psychological evaluations, her Solution-Focused approach builds on client strengths to achieve confidence and lasting change.",
     specialties: [
       'Bipolar Disorder & Depression',
       'Anxiety & Substance Abuse',
@@ -42,7 +42,7 @@ const therapists = [
     name: 'Dr. Danilo Polanco',
     title: 'PhD, Christian Clinical License Counselor, NBCP, CCFC',
     image: '/images/dr-danilo-polanco.png',
-    bio: 'Dr. Danilo Polanco is a PhD-level counselor, Nationally Board Certified Psychologist (NBCP), and Clinically Certified Forensic Counselor (CCFC). He brings over 20 years of experience counseling children and families. A pioneer in temperament modality with theology integration, Dr. Polanco also serves as a Professor of Psychology at Florida Christian University, blending academic rigor with compassionate clinical practice.',
+    bio: 'Dr. Polanco brings 20+ years of experience counseling children and families, with expertise in temperament modality and theology integration. He also serves as Professor of Psychology at Florida Christian University.',
     specialties: [
       'Children & Family Counseling',
       'Forensic Counseling',
@@ -62,7 +62,7 @@ const therapists = [
     name: 'Sandra DeOliveira Zeni',
     title: 'Licensed Mental Health Counselor (LMHC MH16908)',
     image: '/images/sandra-deoliveira-zeni.png',
-    bio: 'Sandra DeOliveira Zeni is a Licensed Mental Health Counselor (LMHC MH16908 Florida) who graduated from the University of Central Florida in 2008. She is bilingual in English and Portuguese, allowing her to serve a diverse range of clients. Sandra uses unconditional positive regard in her practice and specializes in working with individuals across cultures, adults, teens, children, couples, families, and the LGBT community.',
+    bio: 'Sandra is a bilingual (English/Portuguese) LMHC who graduated from UCF in 2008. Using unconditional positive regard, she works with adults, teens, children, couples, and families across diverse cultures including the LGBT community.',
     specialties: [
       'Depression & Anxiety',
       'Couples Counseling',
@@ -82,7 +82,7 @@ const therapists = [
     name: 'Veronica Dickens',
     title: 'Licensed Marriage and Family Therapist',
     image: '/images/veronica-dickens.png',
-    bio: 'Veronica Dickens is a Licensed Marriage and Family Therapist with 20 years of experience working with adults, adolescents, and children across diverse settings including the juvenile system, dependency programs, and mental health facilities. Her focus is on resolving quandaries within individuals and families, creating meaningful change, and reframing family systems to foster healthier dynamics and relationships.',
+    bio: 'With 20 years of experience across juvenile, dependency, and mental health settings, Veronica specializes in reframing family systems and creating meaningful change for individuals, couples, and families.',
     specialties: [
       'Marriage & Family Therapy',
       'Juvenile & Adolescent Issues',
@@ -100,7 +100,7 @@ const therapists = [
     name: 'Betzaida Garcia',
     title: 'Licensed Mental Health Counselor',
     image: '/images/therapist-5.png',
-    bio: 'Betzaida Garcia is a Licensed Mental Health Counselor dedicated to helping individuals and families navigate life\'s challenges with clarity and resilience. She brings a warm, culturally sensitive approach to her practice, creating a safe and supportive environment where clients feel heard and empowered. Betzaida works with adults, adolescents, and couples using evidence-based modalities tailored to each client\'s unique needs.',
+    bio: "Betzaida is a warm, culturally sensitive LMHC who creates a safe space where clients feel heard and empowered. She works with adults, adolescents, and couples using evidence-based approaches tailored to each person's unique goals.",
     specialties: [
       'Individual & Couples Counseling',
       'Anxiety & Stress Management',
@@ -128,11 +128,10 @@ export default function TherapistsPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           {/* Intro */}
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-2xl mx-auto text-center mb-14">
             <p className="section-subtitle">
-              At EQ Counseling &amp; Testing, we believe that the therapeutic relationship
-              is the foundation of healing. Our diverse team brings together specialized expertise,
-              cultural competence, and a genuine commitment to each client's unique journey.
+              Our diverse team brings together specialized expertise and genuine commitment
+              to each client's unique journey.
             </p>
           </div>
 
