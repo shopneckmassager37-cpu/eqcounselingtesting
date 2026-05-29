@@ -111,7 +111,9 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-custom py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-blue-300">
           <p>© {new Date().getFullYear()} EQ Counseling &amp; Testing LLC. All rights reserved.</p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               HIPAA Compliant

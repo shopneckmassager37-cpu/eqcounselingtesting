@@ -38,23 +38,23 @@ function HeroSection() {
               Professional Mental Health Services
             </div>
 
-            <h1 className="font-heading font-extrabold text-5xl md:text-6xl xl:text-7xl leading-[1.08] text-white mb-6">
+            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.08] text-white mb-5">
               Empowering<br />
               <span className="text-blue-300">Mental</span>{' '}
               <span className="text-teal-light">Wellness</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-blue-100 leading-relaxed mb-8 max-w-lg">
+            <p className="text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed mb-7 max-w-lg">
               Compassionate, evidence-based counseling and psychological evaluations
               serving Orlando and the surrounding communities since 2012.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-10">
-              <Link href="/contact" className="btn-primary text-lg">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-8">
+              <Link href="/contact" className="btn-primary justify-center sm:justify-start">
                 Schedule a Consultation
-                <ChevronRight size={20} />
+                <ChevronRight size={18} />
               </Link>
-              <Link href="#services" className="btn-outline-white text-lg">
+              <Link href="#services" className="btn-outline-white justify-center sm:justify-start">
                 Explore Services
               </Link>
             </div>

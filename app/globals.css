@@ -5,14 +5,29 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Better text rendering on mobile */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
     @apply text-neutral-700 antialiased;
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading text-neutral-800;
+  }
+
+  /* Improve tap targets on mobile */
+  a, button {
+    @apply touch-manipulation;
+  }
+
+  /* Better focus styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
   }
 }
 
@@ -22,41 +37,60 @@
   }
 
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-14 md:py-20 lg:py-24;
   }
 
+  /* Mobile-friendly buttons — minimum 44px touch target */
   .btn-primary {
     @apply inline-flex items-center gap-2 bg-secondary hover:bg-secondary-dark text-white
-           px-6 py-3.5 rounded-full font-semibold text-base transition-all duration-200
-           hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2;
+           px-5 py-3 sm:px-6 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base
+           transition-all duration-200 min-h-[44px]
+           hover:shadow-lg hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2
+           active:translate-y-0 active:shadow-none;
   }
 
   .btn-outline-white {
     @apply inline-flex items-center gap-2 border-2 border-white/50 text-white hover:bg-white/15
-           px-6 py-3.5 rounded-full font-semibold text-base transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary;
+           px-5 py-3 sm:px-6 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base
+           transition-all duration-200 min-h-[44px]
+           focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary
+           active:bg-white/20;
   }
 
   .btn-secondary {
     @apply inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white
-           px-6 py-3.5 rounded-full font-semibold text-base transition-all duration-200
-           hover:shadow-lg hover:-translate-y-0.5;
+           px-5 py-3 sm:px-6 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base
+           transition-all duration-200 min-h-[44px]
+           hover:shadow-lg hover:-translate-y-0.5
+           active:translate-y-0;
   }
 
   .card {
-    @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1;
+    @apply bg-white rounded-2xl shadow-card
+           hover:shadow-card-hover transition-all duration-300
+           hover:-translate-y-1;
   }
 
   .section-title {
-    @apply font-heading font-bold text-3xl md:text-4xl text-neutral-800 leading-tight;
+    @apply font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-neutral-800 leading-tight;
   }
 
   .section-subtitle {
-    @apply text-neutral-500 text-lg leading-relaxed;
+    @apply text-neutral-500 text-base sm:text-lg leading-relaxed;
   }
 
   .badge {
     @apply inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full tracking-wide uppercase;
+  }
+
+  /* Responsive table wrapper */
+  .table-responsive {
+    @apply overflow-x-auto -mx-4 sm:mx-0;
+  }
+
+  .table-responsive table {
+    @apply min-w-full;
   }
 }
 
@@ -66,7 +100,17 @@
   }
 }
 
-/* Scroll-based animation utility */
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 @keyframes slideInFromLeft {
   from { opacity: 0; transform: translateX(-30px); }
   to   { opacity: 1; transform: translateX(0); }
@@ -77,6 +121,8 @@
   to   { opacity: 1; transform: translateX(0); }
 }
 
+.animate-fade-in-up   { animation: fadeInUp        0.6s ease-out both; }
+.animate-fade-in      { animation: fadeIn           0.5s ease-out both; }
 .animate-slide-in-left  { animation: slideInFromLeft  0.7s ease-out both; }
 .animate-slide-in-right { animation: slideInFromRight 0.7s ease-out both; }
 
@@ -86,3 +132,21 @@
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }
 .delay-500 { animation-delay: 0.5s; }
+
+/* ── Mobile-specific overrides ─────────────────────────────── */
+
+/* Rates page: make tables scroll on narrow screens */
+@media (max-width: 639px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Allow text wrap inside table cells */
+  td, th {
+    white-space: normal;
+    min-width: 120px;
+  }
+}

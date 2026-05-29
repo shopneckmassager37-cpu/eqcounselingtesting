@@ -97,19 +97,21 @@ const therapists = [
     ],
   },
   {
-    name: 'Team Member',
+    name: 'Betzaida Garcia',
     title: 'Licensed Mental Health Counselor',
     image: '/images/therapist-5.png',
-    bio: 'A dedicated licensed mental health professional at EQ Counseling & Testing, committed to providing compassionate, evidence-based care. This therapist works with individuals and families using a client-centered approach tailored to each person\'s unique needs and goals.',
+    bio: 'Betzaida Garcia is a Licensed Mental Health Counselor dedicated to helping individuals and families navigate life\'s challenges with clarity and resilience. She brings a warm, culturally sensitive approach to her practice, creating a safe and supportive environment where clients feel heard and empowered. Betzaida works with adults, adolescents, and couples using evidence-based modalities tailored to each client\'s unique needs.',
     specialties: [
-      'Individual Counseling',
-      'Family Therapy',
-      'Anxiety & Depression',
-      'Life Transitions',
+      'Individual & Couples Counseling',
+      'Anxiety & Stress Management',
+      'Depression & Mood Disorders',
+      'Life Transitions & Adjustment',
+      'Trauma-Informed Care',
+      'Cultural & Identity Issues',
     ],
     testing: [],
     credentials: [
-      'Licensed Mental Health Counselor — Florida',
+      'LMHC — Licensed Mental Health Counselor, Florida',
     ],
   },
 ]
