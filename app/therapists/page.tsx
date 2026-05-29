@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { CheckCircle, ChevronRight, GraduationCap } from 'lucide-react'
 import PageHero from '@/components/PageHero'
-import TherapistAvatar from '@/components/TherapistAvatar'
 
 export const metadata: Metadata = {
   title: 'Our Therapists',
@@ -14,9 +14,8 @@ const therapists = [
   {
     name: 'Dr. Ronit Navon',
     title: 'Practice Director, PhD, LMHC, NCC',
-    colorFrom: '#2B5FA5',
-    colorTo: '#3D8B9E',
-    bio: 'Dr. Ronit Navon founded EQ Counseling & Testing in 2012 and serves as Practice Director. She holds a PhD in Counseling and is a Licensed Mental Health Counselor and Nationally Certified Counselor specializing in Marriage and Family Therapy. With over 22 years of experience in psychological evaluations, Dr. Navon\'s primary intervention approach is Solution-Focused Theory, emphasizing client strengths and cognitive processes to build confidence, hope, and positive outcomes.',
+    image: '/images/dr-ronit-navon.png',
+    bio: "Dr. Ronit Navon founded EQ Counseling & Testing in 2012 and serves as Practice Director. She holds a PhD in Counseling and is a Licensed Mental Health Counselor and Nationally Certified Counselor specializing in Marriage and Family Therapy. With over 22 years of experience in psychological evaluations, Dr. Navon's primary intervention approach is Solution-Focused Theory, emphasizing client strengths and cognitive processes to build confidence, hope, and positive outcomes.",
     specialties: [
       'Bipolar Disorder & Depression',
       'Anxiety & Substance Abuse',
@@ -33,13 +32,16 @@ const therapists = [
       'Autism/Spectrum Disorder',
       'Career & Personality Tests',
     ],
-    credentials: ['PhD in Counseling', 'LMHC — Licensed Mental Health Counselor', 'NCC — Nationally Certified Counselor'],
+    credentials: [
+      'PhD in Counseling',
+      'LMHC — Licensed Mental Health Counselor',
+      'NCC — Nationally Certified Counselor',
+    ],
   },
   {
     name: 'Dr. Danilo Polanco',
     title: 'PhD, Christian Clinical License Counselor, NBCP, CCFC',
-    colorFrom: '#1a5e3a',
-    colorTo: '#3B9E6E',
+    image: '/images/dr-danilo-polanco.png',
     bio: 'Dr. Danilo Polanco is a PhD-level counselor, Nationally Board Certified Psychologist (NBCP), and Clinically Certified Forensic Counselor (CCFC). He brings over 20 years of experience counseling children and families. A pioneer in temperament modality with theology integration, Dr. Polanco also serves as a Professor of Psychology at Florida Christian University, blending academic rigor with compassionate clinical practice.',
     specialties: [
       'Children & Family Counseling',
@@ -59,8 +61,7 @@ const therapists = [
   {
     name: 'Sandra DeOliveira Zeni',
     title: 'Licensed Mental Health Counselor (LMHC MH16908)',
-    colorFrom: '#7B3FB5',
-    colorTo: '#5E8AC7',
+    image: '/images/sandra-deoliveira-zeni.png',
     bio: 'Sandra DeOliveira Zeni is a Licensed Mental Health Counselor (LMHC MH16908 Florida) who graduated from the University of Central Florida in 2008. She is bilingual in English and Portuguese, allowing her to serve a diverse range of clients. Sandra uses unconditional positive regard in her practice and specializes in working with individuals across cultures, adults, teens, children, couples, families, and the LGBT community.',
     specialties: [
       'Depression & Anxiety',
@@ -80,8 +81,7 @@ const therapists = [
   {
     name: 'Veronica Dickens',
     title: 'Licensed Marriage and Family Therapist',
-    colorFrom: '#C25A2C',
-    colorTo: '#E8A838',
+    image: '/images/veronica-dickens.png',
     bio: 'Veronica Dickens is a Licensed Marriage and Family Therapist with 20 years of experience working with adults, adolescents, and children across diverse settings including the juvenile system, dependency programs, and mental health facilities. Her focus is on resolving quandaries within individuals and families, creating meaningful change, and reframing family systems to foster healthier dynamics and relationships.',
     specialties: [
       'Marriage & Family Therapy',
@@ -94,6 +94,22 @@ const therapists = [
     credentials: [
       'LMFT — Licensed Marriage and Family Therapist',
       '20+ Years of Clinical Experience',
+    ],
+  },
+  {
+    name: 'Team Member',
+    title: 'Licensed Mental Health Counselor',
+    image: '/images/therapist-5.png',
+    bio: 'A dedicated licensed mental health professional at EQ Counseling & Testing, committed to providing compassionate, evidence-based care. This therapist works with individuals and families using a client-centered approach tailored to each person\'s unique needs and goals.',
+    specialties: [
+      'Individual Counseling',
+      'Family Therapy',
+      'Anxiety & Depression',
+      'Life Transitions',
+    ],
+    testing: [],
+    credentials: [
+      'Licensed Mental Health Counselor — Florida',
     ],
   },
 ]
@@ -127,18 +143,24 @@ export default function TherapistsPage() {
                   index % 2 === 1 ? 'md:flex-row-reverse' : ''
                 }`}
               >
-                {/* Avatar + credentials */}
+                {/* Photo + credentials */}
                 <div className="flex flex-col items-center md:items-start gap-4 md:w-64 flex-shrink-0">
-                  <TherapistAvatar
-                    name={therapist.name}
-                    colorFrom={therapist.colorFrom}
-                    colorTo={therapist.colorTo}
-                    size="lg"
-                  />
+                  {/* Therapist photo */}
+                  <div className="relative w-44 h-44 rounded-2xl overflow-hidden shadow-lg ring-4 ring-primary/10 flex-shrink-0">
+                    <Image
+                      src={therapist.image}
+                      alt={`Photo of ${therapist.name}`}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 768px) 176px, 176px"
+                    />
+                  </div>
+
                   <div className="text-center md:text-left">
                     <h2 className="font-heading font-bold text-xl text-neutral-800">{therapist.name}</h2>
                     <p className="text-neutral-500 text-sm mt-1 leading-snug">{therapist.title}</p>
                   </div>
+
                   {/* Credentials */}
                   <div className="w-full">
                     {therapist.credentials.map((cred) => (
@@ -148,9 +170,13 @@ export default function TherapistsPage() {
                       </div>
                     ))}
                   </div>
-                  {/* Placeholder booking CTA */}
+
+                  {/* Booking CTA placeholder */}
                   <div className="w-full">
-                    <div className="w-full text-center px-4 py-2.5 border-2 border-neutral-200 text-neutral-400 rounded-full text-sm cursor-not-allowed" title="Online booking coming soon">
+                    <div
+                      className="w-full text-center px-4 py-2.5 border-2 border-neutral-200 text-neutral-400 rounded-full text-sm cursor-not-allowed"
+                      title="Online booking coming soon"
+                    >
                       Book Appointment
                       <span className="block text-xs text-neutral-300 mt-0.5">Coming soon</span>
                     </div>

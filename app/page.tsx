@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import {
   Brain, Heart, GraduationCap, Scale,
@@ -80,8 +81,14 @@ function HeroSection() {
               {/* Main card */}
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 max-w-sm shadow-2xl">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary-light to-teal flex items-center justify-center text-white text-xl font-bold font-heading shadow-lg">
-                    RN
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden ring-2 ring-white/30 shadow-lg flex-shrink-0">
+                    <Image
+                      src="/images/dr-ronit-navon.png"
+                      alt="Dr. Ronit Navon"
+                      fill
+                      className="object-cover object-top"
+                      sizes="64px"
+                    />
                   </div>
                   <div>
                     <p className="text-white font-heading font-bold text-base">Dr. Ronit Navon</p>
@@ -259,13 +266,16 @@ function AboutSection() {
           {/* Left: Visual */}
           <div className="flex flex-col items-center lg:items-start">
             <div className="relative">
-              {/* Placeholder avatar */}
-              <div
-                className="w-72 h-72 rounded-3xl flex items-center justify-center text-white font-heading font-extrabold text-8xl shadow-xl"
-                style={{ background: 'linear-gradient(135deg, #2B5FA5, #3D8B9E)' }}
-                aria-label="Photo placeholder for Dr. Ronit Navon"
-              >
-                RN
+              {/* Dr. Navon photo */}
+              <div className="relative w-72 h-80 rounded-3xl overflow-hidden shadow-2xl ring-4 ring-primary/10">
+                <Image
+                  src="/images/dr-ronit-navon.png"
+                  alt="Dr. Ronit Navon, Practice Director"
+                  fill
+                  className="object-cover object-top"
+                  sizes="288px"
+                  priority
+                />
               </div>
               {/* Credential badge */}
               <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl px-5 py-3 shadow-xl border border-neutral-100">
