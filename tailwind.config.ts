@@ -48,7 +48,7 @@ const config: Config = {
         heading: ['var(--font-montserrat)', 'ui-sans-serif', 'sans-serif'],
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(135deg, #1a3a6b 0%, #2B5FA5 55%, #3D8B9E 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #2B5FA5 0%, #4A90E2 50%, #5BAFC2 100%)',
         'cta-gradient': 'linear-gradient(135deg, #2B5FA5 0%, #3D8B9E 100%)',
         'card-gradient': 'linear-gradient(135deg, #f0f7ff 0%, #e8f4f8 100%)',
       },

@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import {
-  Brain, Heart, GraduationCap, Scale,
+  Brain, Heart, Scale,
   Phone, Mail, MapPin, ChevronRight,
   Star, CheckCircle, Users, Award, CalendarDays,
-  Shield, Zap, Globe,
+  Shield, Zap, Globe, Medal,
 } from 'lucide-react'
 import AnimatedCounter from '@/components/AnimatedCounter'
 
@@ -47,7 +47,7 @@ function HeroSection() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed mb-7 max-w-lg">
-              Compassionate, evidence-based counseling and psychological evaluations
+              Compassionate, evidence-based counseling and comprehensive assessments
               serving Orlando and the surrounding communities since 2012.
             </p>
 
@@ -176,11 +176,10 @@ function StatsBar() {
 const servicesData = [
   {
     icon: Brain,
-    title: 'Assessments & Testing',
+    title: 'Comprehensive Assessments & Psychological Testing',
     description:
-      'Comprehensive psychological evaluations including Academic, Intelligence, Autism/Spectrum, Career, and Personality tests for juveniles and adults.',
+      'In-depth evaluations including Academic, Intelligence, Autism/Spectrum, Career, and Personality testing for juveniles and adults — clear results, actionable next steps.',
     href: '/assessments',
-    color: 'from-primary/10 to-primary/5',
     iconColor: 'text-primary',
     iconBg: 'bg-primary/10',
   },
@@ -190,19 +189,8 @@ const servicesData = [
     description:
       'Individual, couples, and family therapy for Depression, Anxiety, ADHD, PTSD, and more — serving adults, teens, and children in person or via teletherapy.',
     href: '/counseling',
-    color: 'from-secondary/10 to-secondary/5',
     iconColor: 'text-secondary',
     iconBg: 'bg-secondary/10',
-  },
-  {
-    icon: GraduationCap,
-    title: 'Supervision',
-    description:
-      'Clinical supervision for licensed mental health and marriage & family therapy graduates pursuing Florida licensure. Individual and group formats available.',
-    href: '/supervision',
-    color: 'from-teal/10 to-teal/5',
-    iconColor: 'text-teal',
-    iconBg: 'bg-teal/10',
   },
   {
     icon: Scale,
@@ -210,7 +198,6 @@ const servicesData = [
     description:
       '"Divorce with less trauma" — EQ Divorce Mediation provides compassionate family mediation to resolve conflict and reach agreements with dignity.',
     href: '/mediation',
-    color: 'from-accent/10 to-accent/5',
     iconColor: 'text-accent-dark',
     iconBg: 'bg-accent/10',
   },
@@ -232,7 +219,7 @@ function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {servicesData.map(({ icon: Icon, title, description, href, iconColor, iconBg }, i) => (
             <div key={href} className="reveal" style={{ transitionDelay: `${i * 90}ms` }}>
             <Link
@@ -271,7 +258,7 @@ function AboutSection() {
     'Family & Couples Counseling',
     'Elder Care',
     'Children & Adolescents',
-    'Psychological Evaluations',
+    'Comprehensive Assessments & Testing',
   ]
 
   return (
@@ -412,7 +399,7 @@ const testimonials = [
     stars: 5,
   },
   {
-    text: 'The psychological evaluation process was thorough, compassionate, and provided invaluable insights for my child\'s educational plan. Highly recommend!',
+    text: 'The comprehensive assessment process was thorough, compassionate, and provided invaluable insights for my child\'s educational plan. Highly recommend!',
     name: 'Parent, Seminole County',
     stars: 5,
   },
@@ -465,6 +452,110 @@ function TestimonialsSection() {
         <p className="text-center text-neutral-400 text-xs mt-8">
           * Testimonials are representative of client experiences. Individual results vary.
         </p>
+      </div>
+    </section>
+  )
+}
+
+// ─── Veterans ────────────────────────────────────────────────────────────────
+
+function VeteransSection() {
+  const areas = [
+    { icon: Shield, label: 'Combat & Service-Related PTSD' },
+    { icon: Heart, label: 'Military Sexual Trauma (MST)' },
+    { icon: Users, label: 'Transition & Civilian Adjustment' },
+    { icon: Brain, label: 'TBI-Related Assessments' },
+    { icon: Zap, label: 'Depression & Anxiety' },
+    { icon: Globe, label: 'Family & Relationship Support' },
+  ]
+
+  return (
+    <section className="section-padding bg-white" aria-labelledby="veterans-heading">
+      <div className="container-custom">
+        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+          {/* Left: content */}
+          <div className="reveal-left">
+            <span className="badge bg-primary/10 text-primary mb-3">
+              <Medal size={13} />
+              Serving Those Who Served
+            </span>
+            <h2 id="veterans-heading" className="section-title mb-0">
+              Dedicated Care for<br />
+              Veterans &amp; Active Military
+            </h2>
+            <span className="accent-bar-left" />
+            <p className="text-neutral-600 leading-relaxed mb-6">
+              Those who serve in uniform face challenges that require specialized understanding.
+              Our clinicians are trained to work with veterans, active-duty service members, and
+              their families — providing a confidential, non-judgmental space to heal and move forward.
+            </p>
+
+            <div className="grid grid-cols-2 gap-3 mb-8">
+              {areas.map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-2.5 text-sm text-neutral-700">
+                  <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0">
+                    <Icon size={15} className="text-primary" />
+                  </div>
+                  {label}
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-primary/5 border-l-4 border-primary rounded-r-xl p-5 mb-7">
+              <p className="text-neutral-700 text-sm leading-relaxed">
+                We accept TriCare and work with VA Community Care referrals. Teletherapy available
+                statewide so you can access care from home, on base, or on the road.
+              </p>
+            </div>
+
+            <Link href="/contact" className="btn-secondary">
+              Get Veteran-Focused Support
+              <ChevronRight size={18} />
+            </Link>
+          </div>
+
+          {/* Right: highlight cards */}
+          <div className="reveal-right">
+            <div className="grid grid-cols-1 gap-4">
+              {[
+                {
+                  title: 'Safe & Confidential',
+                  body: 'Everything discussed in session stays between you and your clinician. Your service record and security clearance are never at risk.',
+                  color: 'border-primary/20 bg-primary/3',
+                  icon: Shield,
+                  iconColor: 'text-primary',
+                  iconBg: 'bg-primary/10',
+                },
+                {
+                  title: 'Trauma-Informed Approach',
+                  body: 'We use evidence-based therapies — CPT, EMDR-informed, and Prolonged Exposure — tailored to the unique experiences of military service.',
+                  color: 'border-secondary/20 bg-secondary/3',
+                  icon: Heart,
+                  iconColor: 'text-secondary',
+                  iconBg: 'bg-secondary/10',
+                },
+                {
+                  title: 'Teletherapy Statewide',
+                  body: 'Can\'t make it in person? We offer secure video sessions throughout Florida — no commute, no waiting room, complete privacy.',
+                  color: 'border-teal/20 bg-teal/3',
+                  icon: Globe,
+                  iconColor: 'text-teal',
+                  iconBg: 'bg-teal/10',
+                },
+              ].map(({ title, body, color, icon: Icon, iconColor, iconBg }) => (
+                <div key={title} className={`rounded-2xl border p-5 flex gap-4 items-start ${color}`}>
+                  <div className={`w-10 h-10 rounded-xl ${iconBg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                    <Icon size={18} className={iconColor} />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-bold text-neutral-800 text-sm mb-1">{title}</h3>
+                    <p className="text-neutral-500 text-sm leading-relaxed">{body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
@@ -592,6 +683,7 @@ export default function HomePage() {
       <AboutSection />
       <WhyUsSection />
       <TestimonialsSection />
+      <VeteransSection />
       <LocationsSection />
       <ContactSnippet />
     </>

@@ -9,7 +9,6 @@ import Logo from './Logo'
 const services = [
   { label: 'Assessments & Testing', href: '/assessments' },
   { label: 'Counseling', href: '/counseling' },
-  { label: 'Supervision', href: '/supervision' },
   { label: 'Mediation', href: '/mediation' },
 ]
 
