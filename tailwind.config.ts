@@ -61,6 +61,8 @@ const config: Config = {
         'fade-in-up': 'fadeInUp 0.7s ease-out both',
         'fade-in': 'fadeIn 0.5s ease-out both',
         'pulse-slow': 'pulse 3s ease-in-out infinite',
+        'drift': 'drift 14s ease-in-out infinite',
+        'drift-slow': 'drift 20s ease-in-out infinite reverse',
       },
       keyframes: {
         fadeInUp: {
@@ -70,6 +72,11 @@ const config: Config = {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
+        },
+        drift: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '33%': { transform: 'translate(18px, -12px) scale(1.04)' },
+          '66%': { transform: 'translate(-10px, 8px) scale(0.97)' },
         },
       },
     },

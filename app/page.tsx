@@ -6,6 +6,7 @@ import {
   Star, CheckCircle, Users, Award, CalendarDays,
   Shield, Zap, Globe,
 } from 'lucide-react'
+import AnimatedCounter from '@/components/AnimatedCounter'
 
 // ─── Hero ────────────────────────────────────────────────────────────────────
 
@@ -14,10 +15,11 @@ function HeroSection() {
     <section className="relative min-h-screen flex items-center overflow-hidden bg-hero-gradient" aria-label="Welcome to EQ Counseling & Testing">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-white/5 animate-float" />
-        <div className="absolute bottom-0 -left-16 w-80 h-80 rounded-full bg-teal/10" />
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full border border-white/10" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 right-1/3 w-32 h-32 rounded-full border border-white/10 animate-float" style={{ animationDelay: '3.5s' }} />
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-white/5 animate-drift" />
+        <div className="absolute bottom-0 -left-16 w-80 h-80 rounded-full bg-teal/10 animate-drift-slow" />
+        <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full border border-white/10 animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 right-1/3 w-32 h-32 rounded-full border border-white/10 animate-float" style={{ animationDelay: '2.5s' }} />
+        <div className="absolute top-1/4 left-1/3 w-48 h-48 rounded-full bg-white/3 animate-drift" style={{ animationDelay: '4s' }} />
         {/* Dot grid */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -79,7 +81,7 @@ function HeroSection() {
           <div className="hidden lg:flex justify-center items-center animate-fade-in delay-300">
             <div className="relative">
               {/* Main card */}
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 max-w-sm shadow-2xl">
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 max-w-sm shadow-2xl animate-float">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="relative w-16 h-16 rounded-full overflow-hidden ring-2 ring-white/30 shadow-lg flex-shrink-0">
                     <Image
@@ -109,11 +111,11 @@ function HeroSection() {
               </div>
 
               {/* Floating stat pills */}
-              <div className="absolute -top-5 -right-6 bg-white rounded-2xl px-5 py-3 shadow-xl text-center">
+              <div className="absolute -top-5 -right-6 bg-white rounded-2xl px-5 py-3 shadow-xl text-center animate-float" style={{ animationDelay: '1s' }}>
                 <p className="text-3xl font-extrabold text-primary font-heading leading-none">22+</p>
                 <p className="text-[11px] text-neutral-500 mt-0.5 font-medium">Years Experience</p>
               </div>
-              <div className="absolute -bottom-5 -left-6 bg-white rounded-2xl px-5 py-3 shadow-xl text-center">
+              <div className="absolute -bottom-5 -left-6 bg-white rounded-2xl px-5 py-3 shadow-xl text-center animate-float" style={{ animationDelay: '2.2s' }}>
                 <p className="text-3xl font-extrabold text-secondary font-heading leading-none">4+</p>
                 <p className="text-[11px] text-neutral-500 mt-0.5 font-medium">Specialists</p>
               </div>
@@ -157,7 +159,9 @@ function StatsBar() {
                   <Icon className="w-7 h-7 text-blue-200" />
                 </div>
               </div>
-              <p className="font-heading font-extrabold text-4xl md:text-5xl text-white leading-none tracking-tight">{value}</p>
+              <p className="font-heading font-extrabold text-4xl md:text-5xl text-white leading-none tracking-tight">
+                {label === 'Founded' ? value : <AnimatedCounter value={value} />}
+              </p>
               <p className="text-blue-300 text-xs mt-2 font-semibold uppercase tracking-widest">{label}</p>
             </div>
           ))}

@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CookieBanner from '@/components/CookieBanner'
 import ScrollRevealScript from '@/components/ScrollRevealScript'
+import ScrollProgress from '@/components/ScrollProgress'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -107,6 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
         />
+        <ScrollProgress />
         <Navbar />
         <main>{children}</main>
         <Footer />
