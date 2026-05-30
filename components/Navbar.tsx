@@ -48,15 +48,15 @@ export default function Navbar() {
       {/* Top info bar */}
       <div className={`hidden md:block transition-all duration-300 ${scrolled || !isHome ? 'bg-primary' : 'bg-primary/40 backdrop-blur-sm'}`}>
         <div className="container-custom py-1.5 flex justify-between items-center text-sm text-white/90">
-          <span className="text-blue-200 text-xs tracking-wide">
-            Serving Orange &amp; Seminole Counties, FL • Est. 2012
+          <span className="text-blue-100 text-xs">
+            💙 You don't have to figure it out alone — we're here to help, no judgment.
           </span>
           <div className="flex items-center gap-5">
-            <a href="tel:4074619721" className="flex items-center gap-1.5 hover:text-white transition-colors">
+            <a href="tel:4074619721" className="flex items-center gap-1.5 hover:text-white transition-colors text-xs">
               <Phone size={13} />
               <span>407-461-9721</span>
             </a>
-            <a href="mailto:ronit@eqcounselingtesting.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
+            <a href="mailto:ronit@eqcounselingtesting.com" className="flex items-center gap-1.5 hover:text-white transition-colors text-xs">
               <Mail size={13} />
               <span>ronit@eqcounselingtesting.com</span>
             </a>
@@ -128,7 +128,7 @@ export default function Navbar() {
               href="/contact"
               className="hidden md:inline-flex items-center px-5 py-2.5 bg-secondary hover:bg-secondary-dark text-white rounded-full text-sm font-semibold transition-all hover:shadow-md hover:-translate-y-0.5"
             >
-              Schedule Consultation
+              Let's Talk 💬
             </Link>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -204,7 +204,7 @@ export default function Navbar() {
               className="w-full flex justify-center items-center px-5 py-3 bg-secondary text-white rounded-full font-semibold text-sm hover:bg-secondary-dark transition-colors"
               onClick={() => setMobileOpen(false)}
             >
-              Schedule a Consultation
+              Let's Talk — We're Here 💙
             </Link>
           </div>
         </nav>
