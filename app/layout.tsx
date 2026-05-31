@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import CookieBanner from '@/components/CookieBanner'
 import ScrollRevealScript from '@/components/ScrollRevealScript'
 import ScrollProgress from '@/components/ScrollProgress'
+import DevWidget from '@/components/DevWidget'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -114,6 +115,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <CookieBanner />
         <ScrollRevealScript />
+        <DevWidget />
       </body>
     </html>
   )
