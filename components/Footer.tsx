@@ -11,6 +11,7 @@ const serviceLinks = [
 const quickLinks = [
   { label: 'Our Therapists', href: '/therapists' },
   { label: 'Rates & Insurance', href: '/rates' },
+  { label: 'FAQ', href: '/faq' },
   { label: 'Client Forms', href: '/forms' },
   { label: 'Contact Us', href: '/contact' },
 ]

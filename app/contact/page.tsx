@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Phone, Mail, MapPin, Clock, ExternalLink } from 'lucide-react'
 import PageHero from '@/components/PageHero'
+import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -119,66 +120,7 @@ export default function ContactPage() {
               <p className="text-neutral-500 text-sm mb-6">
                 Fill out the form below and we'll get back to you within one business day.
               </p>
-
-              {/* Placeholder contact form */}
-              <div className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-1.5">First Name</label>
-                    <div className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-400 text-sm cursor-not-allowed" aria-label="First name field — coming soon">
-                      First name
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-1.5">Last Name</label>
-                    <div className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-400 text-sm cursor-not-allowed" aria-label="Last name field — coming soon">
-                      Last name
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1.5">Email Address</label>
-                  <div className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-400 text-sm cursor-not-allowed">
-                    email@example.com
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1.5">Phone (optional)</label>
-                  <div className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-400 text-sm cursor-not-allowed">
-                    Phone number
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1.5">Service of Interest</label>
-                  <div className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-400 text-sm cursor-not-allowed">
-                    Select a service...
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1.5">Message</label>
-                  <div className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-400 text-sm h-28 cursor-not-allowed">
-                    Your message...
-                  </div>
-                </div>
-
-                <div
-                  className="w-full flex justify-center items-center px-6 py-3.5 bg-neutral-300 text-neutral-500 rounded-full font-semibold text-sm cursor-not-allowed"
-                  aria-label="Contact form coming soon"
-                >
-                  Send Message
-                  <span className="ml-2 text-xs bg-neutral-400/30 text-neutral-400 px-2 py-0.5 rounded-full">Coming Soon</span>
-                </div>
-                {/* <!-- Placeholder for contact form integration --> */}
-              </div>
-
-              <p className="text-center text-neutral-400 text-xs mt-4">
-                For immediate assistance, please call{' '}
-                <a href="tel:4074619721" className="text-primary hover:underline">407-461-9721</a>
-              </p>
+              <ContactForm />
             </div>
 
             {/* Hours */}
@@ -253,14 +195,18 @@ export default function ContactPage() {
               ))}
             </div>
 
-            {/* Map placeholder */}
-            <div className="mt-8 bg-neutral-100 rounded-3xl overflow-hidden h-64 flex items-center justify-center border border-neutral-200">
-              <div className="text-center text-neutral-400">
-                <MapPin className="w-10 h-10 mx-auto mb-2 text-neutral-300" />
-                <p className="text-sm font-medium">Interactive Map</p>
-                <p className="text-xs">Google Maps embed will appear here</p>
-                {/* <!-- Placeholder for Google Maps embed --> */}
-              </div>
+            {/* Google Maps embed — Downtown Orlando main office */}
+            <div className="mt-8 rounded-3xl overflow-hidden shadow-md border border-neutral-200">
+              <iframe
+                title="EQ Counseling & Testing — Downtown Orlando Office Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.4!2d-81.3793!3d28.5420!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77b43c1a97265%3A0x6c15d6741d4dba38!2s390%20N%20Orange%20Ave%2C%20Orlando%2C%20FL%2032801!5e0!3m2!1sen!2sus!4v1700000000000"
+                width="100%"
+                height="380"
+                style={{ border: 0, display: 'block' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>

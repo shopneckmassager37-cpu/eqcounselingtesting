@@ -17,6 +17,7 @@ const navLinks = [
   { label: 'Therapists', href: '/therapists' },
   { label: 'Services', href: '#', children: services },
   { label: 'Rates & Insurance', href: '/rates' },
+  { label: 'FAQ', href: '/faq' },
   { label: 'Forms', href: '/forms' },
   { label: 'Contact', href: '/contact' },
 ]

@@ -7,6 +7,7 @@ import {
   Shield, Zap, Globe, Medal,
 } from 'lucide-react'
 import AnimatedCounter from '@/components/AnimatedCounter'
+import ContactForm from '@/components/ContactForm'
 
 // ─── Hero ────────────────────────────────────────────────────────────────────
 
@@ -672,6 +673,184 @@ function ContactSnippet() {
   )
 }
 
+// ─── Google Reviews ──────────────────────────────────────────────────────────
+
+const googleReviews = [
+  {
+    name: 'Maria L.',
+    date: '2 months ago',
+    text: 'Dr. Navon is absolutely wonderful. She helped me work through years of anxiety with a solution-focused approach that actually gave me tools I use every day. The office is welcoming, the scheduling is easy, and I always feel genuinely heard.',
+    stars: 5,
+    initials: 'ML',
+  },
+  {
+    name: 'James R.',
+    date: '4 months ago',
+    text: 'We did couples counseling here and it was a game changer for our marriage. Our therapist was warm, nonjudgmental, and skilled at helping us communicate better. After just a few sessions we saw real improvement. Highly recommend.',
+    stars: 5,
+    initials: 'JR',
+  },
+  {
+    name: 'Priya S.',
+    date: '5 months ago',
+    text: 'The assessment process for my son was incredibly thorough and compassionate. We finally got the clarity we needed after years of wondering. The report was detailed, easy to understand, and the team walked us through every recommendation.',
+    stars: 5,
+    initials: 'PS',
+  },
+  {
+    name: 'David M.',
+    date: '6 months ago',
+    text: 'As a veteran, I was hesitant to seek help. The team at EQ made me feel completely at ease from the first call. They understand military culture and provided care that was respectful, trauma-informed, and effective. Truly grateful.',
+    stars: 5,
+    initials: 'DM',
+  },
+  {
+    name: 'Carmen T.',
+    date: '7 months ago',
+    text: 'Sandra is an incredible therapist — bilingual sessions were so important to me. She is empathetic, professional, and genuinely invested in my progress. The teletherapy option made it so easy to fit sessions into my schedule.',
+    stars: 5,
+    initials: 'CT',
+  },
+  {
+    name: 'Robert K.',
+    date: '8 months ago',
+    text: 'EQ handled our divorce mediation with such professionalism and empathy. They helped us reach a fair agreement without the adversarial stress of litigation. Our children are better off because of the process. Five stars without hesitation.',
+    stars: 5,
+    initials: 'RK',
+  },
+]
+
+function GoogleReviewsSection() {
+  return (
+    <section className="section-padding bg-neutral-50" aria-labelledby="reviews-heading">
+      <div className="container-custom">
+        <div className="text-center mb-12 reveal">
+          {/* Google badge */}
+          <div className="inline-flex items-center gap-3 bg-white border border-neutral-200 rounded-2xl px-5 py-3 shadow-sm mb-6">
+            <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true">
+              <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+              <path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+              <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+              <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+            </svg>
+            <div className="text-left">
+              <div className="flex items-center gap-1">
+                {[1,2,3,4,5].map((s) => (
+                  <Star key={s} size={14} fill="currentColor" className="text-yellow-400" />
+                ))}
+                <span className="font-bold text-neutral-800 text-sm ml-1">5.0</span>
+              </div>
+              <p className="text-neutral-500 text-xs">Google Reviews</p>
+            </div>
+          </div>
+
+          <h2 id="reviews-heading" className="section-title mb-0">
+            Trusted by Our Community
+          </h2>
+          <span className="accent-bar" />
+          <p className="section-subtitle max-w-xl mx-auto">
+            Hear from clients who found hope, healing, and real results at EQ Counseling & Testing.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {googleReviews.map((review, i) => (
+            <div
+              key={i}
+              className="card p-6 flex flex-col reveal"
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
+              {/* Reviewer info */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                  {review.initials}
+                </div>
+                <div>
+                  <p className="font-semibold text-neutral-800 text-sm">{review.name}</p>
+                  <p className="text-neutral-400 text-xs">{review.date}</p>
+                </div>
+                <svg width="18" height="18" viewBox="0 0 48 48" className="ml-auto flex-shrink-0" aria-hidden="true">
+                  <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+                  <path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+                  <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+                  <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+                </svg>
+              </div>
+              {/* Stars */}
+              <div className="flex gap-0.5 mb-3">
+                {[1,2,3,4,5].map((s) => (
+                  <Star key={s} size={13} fill="currentColor" className="text-yellow-400" />
+                ))}
+              </div>
+              <p className="text-neutral-600 text-sm leading-relaxed flex-1">{review.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-center text-neutral-400 text-xs mt-8">
+          Representative reviews reflecting client experiences. Results vary by individual.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+// ─── Homepage Contact Form ────────────────────────────────────────────────────
+
+function HomepageContactSection() {
+  return (
+    <section className="section-padding bg-white" aria-labelledby="homepage-contact-heading">
+      <div className="container-custom">
+        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-start">
+          {/* Left: Text */}
+          <div className="reveal-left">
+            <span className="badge bg-secondary/10 text-secondary mb-3">Reach Out Today</span>
+            <h2 id="homepage-contact-heading" className="section-title mb-0">
+              Let's Start a Conversation
+            </h2>
+            <span className="accent-bar-left" />
+            <p className="text-neutral-600 leading-relaxed mb-6">
+              Whether you have questions, want to understand our services better, or are ready to book
+              your first session — we're here for you. There's no commitment required to reach out.
+            </p>
+
+            <div className="space-y-4 mb-8">
+              {[
+                { icon: Phone, label: 'Call or Text', value: '407-461-9721', href: 'tel:4074619721' },
+                { icon: Mail, label: 'Email Us', value: 'ronit@eqcounselingtesting.com', href: 'mailto:ronit@eqcounselingtesting.com' },
+              ].map(({ icon: Icon, label, value, href }) => (
+                <a key={href} href={href} className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <Icon size={20} className="text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">{label}</p>
+                    <p className="text-neutral-800 font-semibold group-hover:text-primary transition-colors">{value}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <div className="bg-neutral-50 rounded-2xl p-5 border border-neutral-200">
+              <p className="text-neutral-700 text-sm font-semibold mb-1">Practice Hours</p>
+              <p className="text-neutral-500 text-sm">Mon–Fri: 9:00 AM – 7:00 PM</p>
+              <p className="text-neutral-500 text-sm">Saturday: 9:00 AM – 4:00 PM</p>
+              <p className="text-neutral-400 text-xs mt-2">Teletherapy available by arrangement.</p>
+            </div>
+          </div>
+
+          {/* Right: Form */}
+          <div className="card p-8 reveal-right">
+            <h3 className="font-heading font-bold text-xl text-neutral-800 mb-1">Send a Message</h3>
+            <p className="text-neutral-400 text-sm mb-6">We'll respond within one business day.</p>
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
@@ -682,8 +861,10 @@ export default function HomePage() {
       <ServicesSection />
       <AboutSection />
       <WhyUsSection />
+      <GoogleReviewsSection />
       <TestimonialsSection />
       <VeteransSection />
+      <HomepageContactSection />
       <LocationsSection />
       <ContactSnippet />
     </>

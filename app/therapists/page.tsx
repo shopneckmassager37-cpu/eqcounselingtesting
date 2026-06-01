@@ -3,118 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { CheckCircle, ChevronRight, GraduationCap } from 'lucide-react'
 import PageHero from '@/components/PageHero'
+import { therapists } from '@/lib/therapists'
 
 export const metadata: Metadata = {
   title: 'Our Therapists',
   description:
     'Meet the experienced, licensed therapists at EQ Counseling & Testing. Our diverse team specializes in counseling, psychological evaluations, and more.',
 }
-
-const therapists = [
-  {
-    name: 'Dr. Ronit Navon',
-    title: 'Practice Director, PhD, LMHC, NCC',
-    image: '/images/dr-ronit-navon.png',
-    bio: "Dr. Navon earned her PhD in Counseling from Barry University (2009) and her Master's in Community Mental Health from Rollins College (1998). She founded EQ Counseling & Testing in 2012 and, with 22+ years in psychological evaluations, her Solution-Focused approach builds lasting confidence and positive change.",
-    specialties: [
-      'Bipolar Disorder & Depression',
-      'Anxiety & Substance Abuse',
-      'Grief & Family Counseling',
-      'Elder Care & Couples Counseling',
-      'Psychological Evaluations for Juveniles',
-      'Custody Cases & Immigration Assessments',
-      'SSI & Pre-Surgical Assessments',
-      'Learning Disability Evaluations',
-    ],
-    testing: [
-      'Academic & Intelligence Testing',
-      'DSM-IV Diagnosis',
-      'Autism/Spectrum Disorder',
-      'Career & Personality Tests',
-    ],
-    credentials: [
-      'PhD in Counseling',
-      'LMHC — Licensed Mental Health Counselor',
-      'NCC — Nationally Certified Counselor',
-    ],
-  },
-  {
-    name: 'Dr. Danilo Polanco',
-    title: 'PhD, Christian Clinical License Counselor, NBCP, CCFC',
-    image: '/images/dr-danilo-polanco.png',
-    bio: 'Dr. Polanco brings 20+ years of experience counseling children and families, with expertise in temperament modality and theology integration. He also serves as Professor of Psychology at Florida Christian University.',
-    specialties: [
-      'Children & Family Counseling',
-      'Forensic Counseling',
-      'Temperament Modality',
-      'Theology-Integrated Counseling',
-      'Adolescent Behavioral Issues',
-    ],
-    testing: [],
-    credentials: [
-      'PhD in Counseling',
-      'Christian Clinical License Counselor',
-      'NBCP — Nationally Board Certified Psychologist',
-      'CCFC — Clinically Certified Forensic Counselor',
-    ],
-  },
-  {
-    name: 'Sandra DeOliveira Zeni',
-    title: 'Licensed Mental Health Counselor (LMHC MH16908)',
-    image: '/images/sandra-deoliveira-zeni.png',
-    bio: 'Sandra is a bilingual (English/Portuguese) LMHC who graduated from UCF in 2008. Using unconditional positive regard, she works with adults, teens, children, couples, and families across diverse cultures including the LGBT community.',
-    specialties: [
-      'Depression & Anxiety',
-      'Couples Counseling',
-      'Family Therapy',
-      'Adolescent Advice',
-      'Multicultural Counseling',
-      'LGBT Affirmative Therapy',
-    ],
-    testing: [],
-    credentials: [
-      'LMHC MH16908 — Florida',
-      'Bilingual (English & Portuguese)',
-      'University of Central Florida, 2008',
-    ],
-  },
-  {
-    name: 'Veronica Dickens',
-    title: 'Licensed Marriage and Family Therapist',
-    image: '/images/veronica-dickens.png',
-    bio: 'With 20 years of experience across juvenile, dependency, and mental health settings, Veronica specializes in reframing family systems and creating meaningful change for individuals, couples, and families.',
-    specialties: [
-      'Marriage & Family Therapy',
-      'Juvenile & Adolescent Issues',
-      'Dependency & Mental Health Facilities',
-      'Family Systems Reframing',
-      'Adult & Child Counseling',
-    ],
-    testing: [],
-    credentials: [
-      'LMFT — Licensed Marriage and Family Therapist',
-      '20+ Years of Clinical Experience',
-    ],
-  },
-  {
-    name: 'Betzaida Garcia',
-    title: 'Licensed Mental Health Counselor',
-    image: '/images/therapist-5.png',
-    bio: "Betzaida is a warm, culturally sensitive LMHC who creates a safe space where clients feel heard and empowered. She works with adults, adolescents, and couples using evidence-based approaches tailored to each person's unique goals.",
-    specialties: [
-      'Individual & Couples Counseling',
-      'Anxiety & Stress Management',
-      'Depression & Mood Disorders',
-      'Life Transitions & Adjustment',
-      'Trauma-Informed Care',
-      'Cultural & Identity Issues',
-    ],
-    testing: [],
-    credentials: [
-      'LMHC — Licensed Mental Health Counselor, Florida',
-    ],
-  },
-]
 
 export default function TherapistsPage() {
   return (
@@ -147,19 +42,22 @@ export default function TherapistsPage() {
               >
                 {/* Photo + credentials */}
                 <div className="flex flex-col items-center md:items-start gap-4 md:w-64 flex-shrink-0">
-                  {/* Therapist photo */}
-                  <div className="relative w-44 h-44 rounded-2xl overflow-hidden shadow-lg ring-4 ring-primary/10 flex-shrink-0">
-                    <Image
-                      src={therapist.image}
-                      alt={`Photo of ${therapist.name}`}
-                      fill
-                      className="object-cover object-top"
-                      sizes="(max-width: 768px) 176px, 176px"
-                    />
-                  </div>
+                  <Link href={`/therapists/${therapist.slug}`} className="block group">
+                    <div className="relative w-44 h-44 rounded-2xl overflow-hidden shadow-lg ring-4 ring-primary/10 flex-shrink-0 group-hover:ring-primary/30 transition-all">
+                      <Image
+                        src={therapist.image}
+                        alt={`${therapist.name} — ${therapist.title} at EQ Counseling & Testing`}
+                        fill
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 176px, 176px"
+                      />
+                    </div>
+                  </Link>
 
                   <div className="text-center md:text-left">
-                    <h2 className="font-heading font-bold text-xl text-neutral-800">{therapist.name}</h2>
+                    <Link href={`/therapists/${therapist.slug}`}>
+                      <h2 className="font-heading font-bold text-xl text-neutral-800 hover:text-primary transition-colors">{therapist.name}</h2>
+                    </Link>
                     <p className="text-neutral-500 text-sm mt-1 leading-snug">{therapist.title}</p>
                   </div>
 
@@ -173,17 +71,12 @@ export default function TherapistsPage() {
                     ))}
                   </div>
 
-                  {/* Booking CTA placeholder */}
-                  <div className="w-full">
-                    <div
-                      className="w-full text-center px-4 py-2.5 border-2 border-neutral-200 text-neutral-400 rounded-full text-sm cursor-not-allowed"
-                      title="Online booking coming soon"
-                    >
-                      Book Appointment
-                      <span className="block text-xs text-neutral-300 mt-0.5">Coming soon</span>
-                    </div>
-                    {/* <!-- Placeholder for online booking widget --> */}
-                  </div>
+                  <Link
+                    href={`/therapists/${therapist.slug}`}
+                    className="w-full text-center px-4 py-2.5 border-2 border-primary/20 text-primary hover:bg-primary hover:text-white rounded-full text-sm font-semibold transition-all duration-200"
+                  >
+                    View Full Profile
+                  </Link>
                 </div>
 
                 {/* Content */}
