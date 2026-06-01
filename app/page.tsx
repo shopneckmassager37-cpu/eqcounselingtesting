@@ -391,73 +391,6 @@ function WhyUsSection() {
   )
 }
 
-// ─── Testimonials ─────────────────────────────────────────────────────────────
-
-const testimonials = [
-  {
-    text: 'Dr. Navon\'s solution-focused approach completely changed my perspective. I came in feeling overwhelmed and left with clear goals and the confidence to achieve them.',
-    name: 'Client, Orlando FL',
-    stars: 5,
-  },
-  {
-    text: 'The comprehensive assessment process was thorough, compassionate, and provided invaluable insights for my child\'s educational plan. Highly recommend!',
-    name: 'Parent, Seminole County',
-    stars: 5,
-  },
-  {
-    text: 'The couples counseling sessions helped my spouse and me rebuild our communication. Our therapist was warm, non-judgmental, and incredibly skilled.',
-    name: 'Couple, Orange County',
-    stars: 5,
-  },
-]
-
-function TestimonialsSection() {
-  return (
-    <section className="section-padding bg-white" aria-labelledby="testimonials-heading">
-      <div className="container-custom">
-        <div className="text-center mb-12 reveal">
-          <span className="badge bg-secondary/10 text-secondary mb-3">Client Stories</span>
-          <h2 id="testimonials-heading" className="section-title mb-0">
-            What Our Clients Say
-          </h2>
-          <span className="accent-bar" />
-          <p className="section-subtitle max-w-xl mx-auto">
-            Real stories from the individuals and families we've had the privilege to support.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <div key={i} className="card p-8 flex flex-col reveal relative overflow-hidden" style={{ transitionDelay: `${i * 120}ms` }}>
-              {/* Top gradient strip */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-teal" />
-              {/* Stars */}
-              <div className="flex gap-1 mb-4 mt-1">
-                {Array.from({ length: t.stars }).map((_, j) => (
-                  <Star key={j} size={16} fill="currentColor" className="text-yellow-400" />
-                ))}
-              </div>
-              {/* Quote mark */}
-              <span className="text-primary/20 font-heading text-7xl font-extrabold leading-none mb-1" aria-hidden="true">
-                "
-              </span>
-              <p className="text-neutral-600 leading-relaxed flex-1 -mt-6">{t.text}</p>
-              <div className="mt-6 pt-5 border-t border-neutral-100">
-                <p className="font-semibold text-neutral-700 text-sm">{t.name}</p>
-                <p className="text-neutral-400 text-xs mt-0.5">Verified Client</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <p className="text-center text-neutral-400 text-xs mt-8">
-          * Testimonials are representative of client experiences. Individual results vary.
-        </p>
-      </div>
-    </section>
-  )
-}
-
 // ─── Veterans ────────────────────────────────────────────────────────────────
 
 function VeteransSection() {
@@ -862,7 +795,6 @@ export default function HomePage() {
       <AboutSection />
       <WhyUsSection />
       <GoogleReviewsSection />
-      <TestimonialsSection />
       <VeteransSection />
       <HomepageContactSection />
       <LocationsSection />
