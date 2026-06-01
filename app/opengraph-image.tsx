@@ -64,13 +64,13 @@ export default function OGImage() {
           textAlign: 'center', maxWidth: 740,
           margin: 0, lineHeight: 1.4, fontWeight: 400,
         }}>
-          Compassionate counseling, psychological evaluations,
-          supervision &amp; mediation for individuals, couples &amp; families.
+          Compassionate counseling &amp; comprehensive assessments
+          for individuals, couples &amp; families — Orlando, FL.
         </p>
 
         {/* Service pills */}
         <div style={{ display: 'flex', gap: 16, marginTop: 44 }}>
-          {['Counseling', 'Assessments', 'Supervision', 'Mediation'].map((s) => (
+          {['Counseling', 'Assessments', 'Mediation', 'Veterans Care'].map((s) => (
             <div
               key={s}
               style={{
