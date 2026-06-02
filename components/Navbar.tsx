@@ -37,15 +37,17 @@ export default function Navbar() {
   }, [])
 
   const navBg = scrolled || !isHome
-    ? 'bg-white shadow-nav'
+    ? 'shadow-nav'
     : 'bg-transparent'
+
+  const navStyle = scrolled || !isHome ? { backgroundColor: '#FFFDF9' } : undefined
 
   const textColor = scrolled || !isHome ? 'text-neutral-700' : 'text-white/90'
   const hoverColor = scrolled || !isHome ? 'hover:text-primary' : 'hover:text-white'
   const activeColor = scrolled || !isHome ? 'text-primary font-semibold' : 'text-white font-semibold'
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`} style={navStyle}>
       {/* Top info bar */}
       <div className={`hidden md:block transition-all duration-300 ${scrolled || !isHome ? 'bg-primary' : 'bg-primary/40 backdrop-blur-sm'}`}>
         <div className="container-custom py-1.5 flex justify-between items-center text-sm text-white/90">
@@ -85,9 +87,10 @@ export default function Navbar() {
                     </button>
                     {/* Dropdown */}
                     <div
-                      className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-neutral-100
+                      className="absolute top-full left-0 mt-2 w-56 rounded-xl shadow-xl border border-neutral-100
                                  opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
                                  transition-all duration-200 origin-top-left"
+                      style={{ backgroundColor: '#FFFDF9' }}
                       role="menu"
                     >
                       <div className="p-1.5">
@@ -147,9 +150,10 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden bg-white border-b border-neutral-100 shadow-lg overflow-hidden transition-all duration-300 ${
+        className={`lg:hidden border-b border-neutral-100 shadow-lg overflow-hidden transition-all duration-300 ${
           mobileOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
         }`}
+        style={{ backgroundColor: '#FFFDF9' }}
         aria-hidden={!mobileOpen}
       >
         <nav className="container-custom py-4 space-y-1" aria-label="Mobile navigation">
