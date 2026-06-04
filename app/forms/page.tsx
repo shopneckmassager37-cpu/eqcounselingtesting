@@ -117,7 +117,7 @@ export default function FormsPage() {
                   <Lock className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="font-heading font-bold text-2xl text-white mb-3">Secure Client Portal</h2>
-                <p className="text-blue-100 text-sm leading-relaxed mb-6">
+                <p className="text-purple-100 text-sm leading-relaxed mb-6">
                   Our HIPAA-compliant client portal allows you to complete forms, review documents,
                   and communicate securely with your therapist — all in one convenient place.
                   You'll receive access after scheduling your appointment.
@@ -134,7 +134,7 @@ export default function FormsPage() {
                     <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">Coming Soon</span>
                   </div>
                   {/* <!-- Placeholder for client portal widget integration --> */}
-                  <p className="text-blue-300 text-xs">
+                  <p className="text-purple-300 text-xs">
                     After scheduling, you'll receive a secure access link by email.
                   </p>
                 </div>

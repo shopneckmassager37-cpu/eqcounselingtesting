@@ -205,7 +205,7 @@ export default function CounselingPage() {
       <section className="py-16 bg-cta-gradient">
         <div className="container-custom text-center">
           <h2 className="font-heading font-bold text-3xl text-white mb-4">Take the First Step</h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-purple-100 text-lg mb-8 max-w-xl mx-auto">
             Reaching out for help takes courage. We're here to support you every step of the way.
           </p>
           <Link href="/contact" className="btn-primary">

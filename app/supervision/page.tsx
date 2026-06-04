@@ -205,7 +205,7 @@ export default function SupervisionPage() {
               RN
             </div>
             <h2 className="font-heading font-bold text-3xl text-white mb-4">Your Supervisor</h2>
-            <p className="text-blue-100 leading-relaxed mb-6">
+            <p className="text-purple-100 leading-relaxed mb-6">
               Dr. Ronit Navon — PhD, LMHC, NCC — brings 22+ years of clinical experience and a
               solution-focused philosophy that empowers supervisees to find their own professional voice.
             </p>

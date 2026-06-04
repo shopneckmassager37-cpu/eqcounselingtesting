@@ -75,7 +75,7 @@ export default function TherapistProfilePage({ params }: { params: { slug: strin
         <div className="container-custom relative z-10">
           <Link
             href="/therapists"
-            className="inline-flex items-center gap-2 text-blue-200 hover:text-white text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-purple-200 hover:text-white text-sm mb-8 transition-colors"
           >
             <ArrowLeft size={16} />
             Back to All Therapists
@@ -92,9 +92,9 @@ export default function TherapistProfilePage({ params }: { params: { slug: strin
               />
             </div>
             <div>
-              <p className="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-1">Meet Your Therapist</p>
+              <p className="text-purple-300 text-sm font-semibold uppercase tracking-widest mb-1">Meet Your Therapist</p>
               <h1 className="font-heading font-extrabold text-3xl sm:text-4xl text-white leading-tight">{therapist.name}</h1>
-              <p className="text-blue-200 mt-1">{therapist.title}</p>
+              <p className="text-purple-200 mt-1">{therapist.title}</p>
             </div>
           </div>
         </div>
@@ -194,11 +194,11 @@ export default function TherapistProfilePage({ params }: { params: { slug: strin
 
               {/* CTA */}
               <div className="bg-hero-gradient rounded-2xl p-8 text-center">
-                <p className="text-blue-200 text-sm uppercase tracking-widest font-semibold mb-2">Ready to Take the First Step?</p>
+                <p className="text-purple-200 text-sm uppercase tracking-widest font-semibold mb-2">Ready to Take the First Step?</p>
                 <h3 className="font-heading font-bold text-2xl text-white mb-3">
                   Schedule a Session with {therapist.name.split(' ')[0]}
                 </h3>
-                <p className="text-blue-100 mb-6 text-sm">
+                <p className="text-purple-100 mb-6 text-sm">
                   We offer in-person and teletherapy sessions across Central Florida.
                 </p>
                 <Link href="/contact" className="btn-primary">

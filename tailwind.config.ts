@@ -10,11 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#2B5FA5',
-          light: '#4A90E2',
-          dark: '#1a3a6b',
-          50: '#eff6ff',
-          100: '#dbeafe',
+          DEFAULT: '#6B4AA0',
+          light: '#8B6AC0',
+          dark: '#4E3275',
+          50: '#F4F0FA',
+          100: '#E5D8F5',
         },
         secondary: {
           DEFAULT: '#3B9E6E',
@@ -48,8 +48,8 @@ const config: Config = {
         heading: ['var(--font-montserrat)', 'ui-sans-serif', 'sans-serif'],
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(135deg, #2B5FA5 0%, #4A90E2 50%, #5BAFC2 100%)',
-        'cta-gradient': 'linear-gradient(135deg, #2B5FA5 0%, #3D8B9E 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #4E3275 0%, #6B4AA0 50%, #8B6AC0 100%)',
+        'cta-gradient': 'linear-gradient(135deg, #4E3275 0%, #6B4AA0 100%)',
         'card-gradient': 'linear-gradient(135deg, #fdf8f3 0%, #f5ede6 100%)',
       },
       boxShadow: {

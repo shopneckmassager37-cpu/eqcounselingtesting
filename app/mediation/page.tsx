@@ -217,7 +217,7 @@ export default function MediationPage() {
           <h2 className="font-heading font-bold text-3xl text-white mb-4">
             Start a Healthier Resolution Process
           </h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-purple-100 text-lg mb-8 max-w-xl mx-auto">
             Contact us to schedule a confidential mediation consultation.
           </p>
           <Link href="/contact" className="btn-primary">

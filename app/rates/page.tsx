@@ -238,7 +238,7 @@ export default function RatesPage() {
           <h2 className="font-heading font-bold text-3xl text-white mb-4">
             Have Questions About Fees or Insurance?
           </h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-purple-100 text-lg mb-8 max-w-xl mx-auto">
             Contact us and we'll be happy to verify your benefits and answer any billing questions.
           </p>
           <Link href="/contact" className="btn-primary">

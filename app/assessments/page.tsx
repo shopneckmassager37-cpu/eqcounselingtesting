@@ -217,7 +217,7 @@ export default function AssessmentsPage() {
           <h2 className="font-heading font-bold text-3xl text-white mb-4">
             Get Clarity Through Assessment
           </h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-purple-100 text-lg mb-8 max-w-xl mx-auto">
             Contact us to discuss which evaluation is right for you or your child.
           </p>
           <Link href="/contact" className="btn-primary">

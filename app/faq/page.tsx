@@ -146,7 +146,7 @@ export default function FAQPage() {
           {/* Still have questions CTA */}
           <div className="mt-16 bg-hero-gradient rounded-2xl p-8 text-center">
             <h3 className="font-heading font-bold text-2xl text-white mb-3">Still Have Questions?</h3>
-            <p className="text-blue-100 mb-6">
+            <p className="text-purple-100 mb-6">
               We're happy to answer any questions before you book. Reach out and we'll get back to you promptly.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -160,7 +160,7 @@ export default function FAQPage() {
             </div>
             <a
               href="mailto:ronit@eqcounselingtesting.com"
-              className="inline-flex items-center gap-2 text-blue-200 hover:text-white text-sm mt-4 transition-colors"
+              className="inline-flex items-center gap-2 text-purple-200 hover:text-white text-sm mt-4 transition-colors"
             >
               <Mail size={14} />
               ronit@eqcounselingtesting.com

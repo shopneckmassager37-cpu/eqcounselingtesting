@@ -13,7 +13,15 @@ import ContactForm from '@/components/ContactForm'
 
 function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-hero-gradient" aria-label="Welcome to EQ Counseling & Testing">
+    <section className="relative min-h-screen flex items-center overflow-hidden" aria-label="Welcome to EQ Counseling & Testing">
+      {/* Background: gradient + optional photo overlay */}
+      <div className="absolute inset-0 bg-hero-gradient" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-[0.18]"
+        style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}
+        aria-hidden="true"
+      />
+
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-white/5 animate-drift" />
@@ -30,24 +38,45 @@ function HeroSection() {
           </defs>
           <rect width="100%" height="100%" fill="url(#dots)" />
         </svg>
+
+        {/* Stacked stones — bottom-left zen decoration */}
+        <div className="absolute bottom-16 left-6 lg:left-12 w-24 h-32 opacity-20 animate-float" style={{ animationDelay: '3s' }}>
+          <svg viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+            <ellipse cx="50" cy="18" rx="22" ry="11" fill="white" />
+            <ellipse cx="50" cy="52" rx="32" ry="15" fill="white" />
+            <ellipse cx="50" cy="92" rx="44" ry="20" fill="white" />
+            <line x1="6" y1="118" x2="94" y2="118" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+          </svg>
+        </div>
+
+        {/* Tree — upper-left nature accent */}
+        <div className="absolute top-8 left-[15%] w-20 h-28 opacity-10 animate-drift-slow">
+          <svg viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+            <rect x="43" y="92" width="14" height="30" rx="5" fill="white" />
+            <ellipse cx="50" cy="78" rx="36" ry="26" fill="white" />
+            <ellipse cx="50" cy="56" rx="27" ry="22" fill="white" />
+            <ellipse cx="50" cy="36" rx="19" ry="17" fill="white" />
+            <ellipse cx="50" cy="20" rx="12" ry="12" fill="white" />
+          </svg>
+        </div>
       </div>
 
       <div className="container-custom relative z-10 pt-36 pb-24">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
           {/* Left: Main content */}
           <div className="animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-blue-200 text-xs font-semibold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-purple-200 text-xs font-semibold px-4 py-2 rounded-full mb-6 tracking-wider uppercase">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse-slow" />
               Professional Mental Health Services
             </div>
 
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.08] text-white mb-5">
               Empowering<br />
-              <span className="text-blue-300">Mental</span>{' '}
+              <span className="text-purple-200">Mental</span>{' '}
               <span className="text-teal-light">Wellness</span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed mb-7 max-w-lg">
+            <p className="text-base sm:text-lg md:text-xl text-purple-100 leading-relaxed mb-7 max-w-lg">
               Compassionate, evidence-based counseling and comprehensive assessments
               serving Orlando and the surrounding communities since 2012.
             </p>
@@ -63,7 +92,7 @@ function HeroSection() {
             </div>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-white/70 text-sm">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-purple-100/80 text-sm">
               {[
                 'Est. 2012',
                 'Licensed Therapists',
@@ -95,11 +124,11 @@ function HeroSection() {
                   </div>
                   <div>
                     <p className="text-white font-heading font-bold text-base">Dr. Ronit Navon</p>
-                    <p className="text-blue-200 text-sm">PhD, LMHC, NCC</p>
-                    <p className="text-blue-300 text-xs">Practice Director</p>
+                    <p className="text-purple-200 text-sm">PhD, LMHC, NCC</p>
+                    <p className="text-purple-300 text-xs">Practice Director</p>
                   </div>
                 </div>
-                <p className="text-blue-100 text-sm leading-relaxed italic">
+                <p className="text-purple-100 text-sm leading-relaxed italic">
                   "For any encountered obstacle, there is a solution and the solution
                   comes from within the individual, to pursue their goals, dreams, and happiness."
                 </p>
@@ -107,7 +136,7 @@ function HeroSection() {
                   {[1, 2, 3, 4, 5].map((i) => (
                     <Star key={i} size={14} fill="currentColor" className="text-yellow-400" />
                   ))}
-                  <span className="text-blue-200 text-xs ml-1">Solution-Focused Approach</span>
+                  <span className="text-purple-200 text-xs ml-1">Solution-Focused Approach</span>
                 </div>
               </div>
 
@@ -157,13 +186,13 @@ function StatsBar() {
               <div className="relative w-14 h-14 mx-auto mb-4">
                 <div className="absolute inset-0 rounded-xl bg-white/10 blur-sm scale-110" />
                 <div className="relative w-14 h-14 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center group-hover:bg-white/25 transition-colors">
-                  <Icon className="w-7 h-7 text-blue-200" />
+                  <Icon className="w-7 h-7 text-purple-200" />
                 </div>
               </div>
               <p className="font-heading font-extrabold text-4xl md:text-5xl text-white leading-none tracking-tight">
                 {label === 'Founded' ? value : <AnimatedCounter value={value} />}
               </p>
-              <p className="text-blue-300 text-xs mt-2 font-semibold uppercase tracking-widest">{label}</p>
+              <p className="text-purple-300 text-xs mt-2 font-semibold uppercase tracking-widest">{label}</p>
             </div>
           ))}
         </div>
@@ -263,8 +292,18 @@ function AboutSection() {
   ]
 
   return (
-    <section className="section-padding bg-neutral-50" aria-labelledby="about-heading">
-      <div className="container-custom">
+    <section className="section-padding bg-neutral-50 relative overflow-hidden" aria-labelledby="about-heading">
+      {/* Background tree decoration */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-40 h-56 opacity-[0.05] pointer-events-none" aria-hidden="true">
+        <svg viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <rect x="43" y="92" width="14" height="32" rx="5" fill="#6B4AA0" />
+          <ellipse cx="50" cy="78" rx="36" ry="26" fill="#6B4AA0" />
+          <ellipse cx="50" cy="56" rx="27" ry="22" fill="#6B4AA0" />
+          <ellipse cx="50" cy="36" rx="19" ry="17" fill="#6B4AA0" />
+          <ellipse cx="50" cy="20" rx="12" ry="12" fill="#6B4AA0" />
+        </svg>
+      </div>
+      <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
           {/* Left: Visual */}
           <div className="flex flex-col items-center lg:items-start reveal-left">
@@ -362,15 +401,32 @@ function WhyUsSection() {
   ]
 
   return (
-    <section className="section-padding bg-cta-gradient" aria-labelledby="why-us-heading">
-      <div className="container-custom">
+    <section className="section-padding bg-cta-gradient relative overflow-hidden" aria-labelledby="why-us-heading">
+      {/* Peaceful family silhouette — right background */}
+      <div className="absolute right-0 bottom-0 w-64 h-56 opacity-[0.07] pointer-events-none" aria-hidden="true">
+        <svg viewBox="0 0 160 130" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          {/* Adult 1 */}
+          <circle cx="38" cy="24" r="13" fill="white" />
+          <path d="M20 72 C20 50 56 50 56 72 L56 108 C56 113 20 113 20 108 Z" fill="white" />
+          {/* Adult 2 */}
+          <circle cx="82" cy="26" r="12" fill="white" />
+          <path d="M65 72 C65 52 99 52 99 72 L99 108 C99 112 65 112 65 108 Z" fill="white" />
+          {/* Child */}
+          <circle cx="124" cy="40" r="10" fill="white" />
+          <path d="M110 78 C110 60 138 60 138 78 L138 108 C138 111 110 111 110 108 Z" fill="white" />
+          {/* Ground */}
+          <line x1="12" y1="122" x2="148" y2="122" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+        </svg>
+      </div>
+
+      <div className="container-custom relative z-10">
         <div className="text-center mb-12 reveal">
-          <span className="badge bg-white/20 text-blue-200 mb-3">Why Choose Us</span>
+          <span className="badge bg-white/20 text-purple-200 mb-3">Why Choose Us</span>
           <h2 id="why-us-heading" className="section-title text-white mb-0">
             The EQ Difference
           </h2>
           <span className="accent-bar-light" />
-          <p className="text-blue-100 text-lg max-w-2xl mx-auto">
+          <p className="text-purple-100 text-lg max-w-2xl mx-auto">
             We combine clinical expertise with genuine compassion to help you navigate life's challenges.
           </p>
         </div>
@@ -382,7 +438,7 @@ function WhyUsSection() {
                 <Icon className="w-7 h-7 text-white" />
               </div>
               <h3 className="font-heading font-bold text-white text-base mb-2">{title}</h3>
-              <p className="text-blue-200 text-sm leading-relaxed">{description}</p>
+              <p className="text-purple-200 text-sm leading-relaxed">{description}</p>
             </div>
           ))}
         </div>
@@ -569,7 +625,7 @@ function ContactSnippet() {
             <h2 id="contact-snippet-heading" className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">
               Ready to Begin Your Journey?
             </h2>
-            <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">
+            <p className="text-purple-100 text-lg mb-8 max-w-xl mx-auto">
               Taking the first step toward better mental health is the most important one.
               Reach out today — we're here to help.
             </p>
@@ -585,7 +641,7 @@ function ContactSnippet() {
               </a>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-8 text-blue-200 text-sm">
+            <div className="flex flex-wrap justify-center gap-8 text-purple-200 text-sm">
               <a href="tel:4074619721" className="flex items-center gap-2 hover:text-white transition-colors">
                 <Phone size={16} />
                 407-461-9721
