@@ -15,8 +15,6 @@ const counselingRates = [
   { service: 'Couples Therapy Session (50 min)', rate: '$140' },
   { service: 'Family Therapy Session (60 min)', rate: '$150' },
   { service: 'Group Therapy Session', rate: '$60' },
-  { service: 'Clinical Supervision — Group (90 min)', rate: 'Contact for rates' },
-  { service: 'Clinical Supervision — Individual (50 min)', rate: 'Contact for rates' },
   { service: 'Teletherapy Session', rate: 'Same as in-person' },
 ]
 
