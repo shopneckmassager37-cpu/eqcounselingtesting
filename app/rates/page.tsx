@@ -13,8 +13,6 @@ const counselingRates = [
   { service: 'Individual Therapy Session (60 min)', rate: '$150' },
   { service: 'Couples / Family Session (75 min)', rate: '$175' },
   { service: 'Online / Teletherapy Session (60 min)', rate: '$80' },
-  { service: 'Clinical Supervision — Group (90 min)', rate: 'Contact for rates' },
-  { service: 'Clinical Supervision — Individual (50 min)', rate: 'Contact for rates' },
 ]
 
 const prepaidPackages = [
