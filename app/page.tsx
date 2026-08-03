@@ -170,7 +170,7 @@ function StatsBar() {
   const stats = [
     { icon: CalendarDays, value: '2012', label: 'Founded' },
     { icon: Award, value: '22+', label: 'Years of Experience' },
-    { icon: MapPin, value: '5+', label: 'Practice Locations' },
+    { icon: MapPin, value: '10', label: 'Practice Locations' },
     { icon: Users, value: '4', label: 'Licensed Specialists' },
   ]
 
@@ -556,13 +556,13 @@ function VeteransSection() {
 function LocationsSection() {
   const locations = [
     {
-      title: 'Downtown Orlando & Surrounds',
-      description: 'Offices in Downtown Orlando, Windermere/Winter Garden, South Orlando/Millenia, and Colonial Town Center.',
+      title: 'Greater Orlando',
+      description: 'Nine offices across Downtown Orlando, Maitland, Winter Park, Windermere, Winter Garden, South Orlando/Millenia, Colonial Town Center, UCF/East Orlando, and University Blvd/Oviedo.',
       link: 'https://maps.google.com/?q=390+N+Orange+Ave+Suite+2300+Orlando+FL+32801',
     },
     {
       title: 'Lake Mary — Seminole County',
-      description: '255 Primera Blvd, Suite 160, Lake Mary, FL 32746 — serving Seminole County and surrounding communities.',
+      description: '255 Primera Blvd, Suite 160, Lake Mary, FL 32746 — serving Lake Mary, Apopka, Sanford, Longwood, Casselberry, and Altamonte Springs.',
       link: 'https://maps.google.com/?q=255+Primera+Blvd+Suite+160+Lake+Mary+FL+32746',
     },
     {
