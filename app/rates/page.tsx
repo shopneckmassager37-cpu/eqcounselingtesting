@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Rates & Insurance',
   description:
     'Transparent pricing for counseling, psychological testing, and supervision at EQ Counseling & Testing. Insurance accepted. Private pay options available.',
+  alternates: { canonical: '/rates' },
 }
 
 const counselingRates = [
@@ -21,14 +22,9 @@ const prepaidPackages = [
 ]
 
 const testingRates = [
-  { service: 'Psychological Evaluation — Comprehensive', rate: '$800 – $1,500' },
-  { service: 'ADHD Evaluation (Child or Adult)', rate: '$600 – $900' },
-  { service: 'Autism Spectrum Disorder Evaluation', rate: '$900 – $1,400' },
-  { service: 'Academic / Learning Disability Assessment', rate: '$500 – $800' },
-  { service: 'Intelligence (IQ) Testing Only', rate: '$350 – $500' },
-  { service: 'Personality Assessment', rate: '$400 – $700' },
-  { service: 'Career Assessment', rate: '$250 – $400' },
-  { service: 'Forensic / Specialized Evaluation', rate: 'Contact for quote' },
+  { service: 'Total Cost of Testing (typical range)', rate: '$1,400 – $3,500' },
+  { service: 'Written Report Fee (not covered by insurance)', rate: '$500' },
+  { service: 'Evaluation Appointment Down Payment (applied to report/co-payment)', rate: '$200' },
 ]
 
 const insuranceProviders = [
@@ -142,11 +138,10 @@ export default function RatesPage() {
               <div>
                 <h2 className="font-heading font-bold text-neutral-800 text-xl mb-3">Deposit &amp; No-Show Policy</h2>
                 <div className="space-y-2 text-sm text-neutral-700">
-                  <p><strong>Deposit:</strong> A credit card on file is required to hold appointments for psychological evaluations.</p>
+                  <p><strong>Deposit:</strong> A $200 down payment is required to secure an evaluation appointment (applied toward your report/co-payment); a $60 deposit secures a counseling appointment.</p>
                   <p><strong>Cancellation:</strong> Please provide at least 24 hours' notice to cancel or reschedule your appointment.</p>
-                  <p><strong>Late Cancellation:</strong> Cancellations within 24 hours may be charged 50% of the session fee.</p>
-                  <p><strong>No-Show:</strong> Missed appointments without notice will be charged the full session fee.</p>
-                  <p><strong>Insurance:</strong> No-show fees are typically not covered by insurance and are the client's responsibility.</p>
+                  <p><strong>Late Cancellation &amp; No-Show:</strong> If you cancel within 24 hours of your appointment or do not show up, your deposit will be forfeited.</p>
+                  <p><strong>Insurance:</strong> Deposits and report fees are typically not covered by insurance and are the client's responsibility.</p>
                 </div>
               </div>
             </div>

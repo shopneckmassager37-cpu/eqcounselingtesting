@@ -199,7 +199,9 @@ export default function TherapistProfilePage({ params }: { params: { slug: strin
                   Schedule a Session with {therapist.name.split(' ')[0]}
                 </h3>
                 <p className="text-purple-100 mb-6 text-sm">
-                  We offer in-person and teletherapy sessions across Central Florida.
+                  {therapist.teletherapyOnly
+                    ? 'Sessions offered via secure telehealth statewide.'
+                    : 'We offer in-person and teletherapy sessions across Central Florida.'}
                 </p>
                 <Link href="/contact" className="btn-primary">
                   Book a Consultation

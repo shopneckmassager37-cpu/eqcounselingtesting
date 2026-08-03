@@ -7,6 +7,7 @@ export interface Therapist {
   specialties: string[]
   testing: string[]
   credentials: string[]
+  teletherapyOnly?: boolean
   schema: {
     jobTitle: string
     hasCredential: string[]
@@ -121,23 +122,23 @@ export const therapists: Therapist[] = [
     name: 'Veronica Dickens',
     title: 'Licensed Marriage and Family Therapist',
     image: '/images/veronica-dickens.png',
-    bio: 'With 20 years of experience across juvenile, dependency, and mental health settings, Veronica specializes in reframing family systems and creating meaningful change for individuals, couples, and families.',
+    bio: 'Veronica specializes in marital issues, premarital and couples counseling, and helps clients work through major depression, bipolar disorder, anxiety, and anger management.',
     specialties: [
-      'Marriage & Family Therapy',
-      'Juvenile & Adolescent Issues',
-      'Dependency & Mental Health Facilities',
-      'Family Systems Reframing',
-      'Adult & Child Counseling',
+      'Marital & Premarital Counseling',
+      'Couples Counseling',
+      'Major Depression',
+      'Bipolar Disorder',
+      'Anxiety',
+      'Anger Management',
     ],
     testing: [],
     credentials: [
       'LMFT — Licensed Marriage and Family Therapist',
-      '20+ Years of Clinical Experience',
     ],
     schema: {
       jobTitle: 'Licensed Marriage and Family Therapist',
       hasCredential: ['LMFT'],
-      knowsAbout: ['Marriage Therapy', 'Family Therapy', 'Juvenile Counseling', 'Adolescent Issues'],
+      knowsAbout: ['Marriage Therapy', 'Couples Counseling', 'Depression', 'Bipolar Disorder', 'Anxiety', 'Anger Management'],
       worksFor: 'EQ Counseling & Testing LLC',
       telephone: '+1-407-461-9721',
       address: '390 N Orange Ave, Suite 2300, Orlando, FL 32801',
@@ -146,9 +147,9 @@ export const therapists: Therapist[] = [
   {
     slug: 'betzaida-garcia',
     name: 'Betzaida Garcia',
-    title: 'Licensed Mental Health Counselor',
+    title: 'Registered Mental Health Counselor Intern',
     image: '/images/therapist-5.png',
-    bio: "Betzaida is a warm, culturally sensitive LMHC who creates a safe space where clients feel heard and empowered. She works with adults, adolescents, and couples using evidence-based approaches tailored to each person's unique goals.",
+    bio: "Betzaida is a warm, culturally sensitive Registered Mental Health Counselor Intern (IMH 21028, Florida) who creates a safe space where clients feel heard and empowered. She works with adults, adolescents, and couples using evidence-based approaches tailored to each person's unique goals, providing telehealth therapy only.",
     specialties: [
       'Individual & Couples Counseling',
       'Anxiety & Stress Management',
@@ -159,11 +160,13 @@ export const therapists: Therapist[] = [
     ],
     testing: [],
     credentials: [
-      'LMHC — Licensed Mental Health Counselor, Florida',
+      'Registered Mental Health Counselor Intern — IMH 21028, Florida',
+      'Telehealth therapy only',
     ],
+    teletherapyOnly: true,
     schema: {
-      jobTitle: 'Licensed Mental Health Counselor',
-      hasCredential: ['LMHC'],
+      jobTitle: 'Registered Mental Health Counselor Intern',
+      hasCredential: ['RMHCI'],
       knowsAbout: ['Individual Counseling', 'Couples Counseling', 'Anxiety', 'Depression', 'Trauma-Informed Care'],
       worksFor: 'EQ Counseling & Testing LLC',
       telephone: '+1-407-461-9721',

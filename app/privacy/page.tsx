@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
     'Privacy Policy for EQ Counseling & Testing LLC. Learn how we collect, use, and protect your personal and health information in accordance with HIPAA.',
+  alternates: { canonical: '/privacy' },
 }
 
 const sections = [

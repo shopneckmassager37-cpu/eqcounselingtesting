@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   title: 'Assessments & Testing',
   description:
     'Comprehensive psychological evaluations and testing at EQ Counseling & Testing in Orlando, FL — mental health, psychosocial, ADHD, psychoeducational, ASD, personality, custody, substance abuse, pre-surgical, Social Security, immigration, and fit-for-duty evaluations.',
+  alternates: { canonical: '/assessments' },
 }
 
 type Fact =
@@ -329,9 +330,24 @@ const serviceSections: ServiceSection[] = [
   },
 ]
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Psychological Assessment & Testing',
+  name: 'Assessments & Testing',
+  provider: { '@type': 'MedicalBusiness', name: 'EQ Counseling & Testing LLC', url: 'https://www.eqcounselingtesting.com' },
+  areaServed: ['Orange County, FL', 'Seminole County, FL', 'Florida'],
+  description:
+    'Comprehensive psychological evaluations and testing including mental health, psychosocial, ADHD, psychoeducational, ASD, personality, custody, substance abuse, pre-surgical, Social Security, immigration, and fit-for-duty evaluations.',
+}
+
 export default function AssessmentsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <PageHero
         title="Assessments & Testing"
         subtitle="Comprehensive, multi-faceted psychological evaluations that provide clarity, insight, and a roadmap for your next steps."

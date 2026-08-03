@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Family Mediation',
   description:
     'EQ Divorce Mediation — "Divorce with less trauma." Compassionate family mediation services in Orlando, FL helping families reach dignified agreements.',
+  alternates: { canonical: '/mediation' },
 }
 
 const benefits = [
@@ -66,9 +67,24 @@ const issuesCovered = [
   'Co-Parenting Communication Plans',
 ]
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Family Mediation',
+  name: 'EQ Divorce Mediation',
+  provider: { '@type': 'MedicalBusiness', name: 'EQ Counseling & Testing LLC', url: 'https://www.eqcounselingtesting.com' },
+  areaServed: ['Orange County, FL', 'Seminole County, FL', 'Florida'],
+  description:
+    'EQ Divorce Mediation — compassionate family mediation services in Orlando, FL helping families reach dignified agreements.',
+}
+
 export default function MediationPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <PageHero
         title="Family Mediation"
         subtitle='"Divorce with less trauma" — compassionate mediation that helps families resolve conflict with dignity and respect.'
@@ -129,7 +145,7 @@ export default function MediationPage() {
               <h2 className="section-title mb-4">Mediation vs. Litigation</h2>
               <div className="space-y-3">
                 {[
-                  ['Cost', 'Fraction of litigation cost', 'Can reach $15,000–$30,000+'],
+                  ['Cost', 'Fraction of litigation cost', 'Significantly higher'],
                   ['Duration', 'Weeks to a few months', 'Months to years'],
                   ['Privacy', 'Fully confidential', 'Public court record'],
                   ['Control', 'Both parties decide', 'Judge decides'],

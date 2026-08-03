@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Contact Us',
   description:
     'Contact EQ Counseling & Testing in Orlando, FL. Call 407-461-9721 or email ronit@eqcounselingtesting.com. Multiple office locations across Orange and Seminole counties.',
+  alternates: { canonical: '/contact' },
 }
 
 const offices = [
@@ -26,9 +27,9 @@ const offices = [
   },
   {
     name: 'Windermere / Winter Garden',
-    address: '7208 W Sand Lake Rd, Suite 305, Orlando, FL 32819',
+    address: '7345 W Sand Lake Rd, Suite 310, Orlando, FL 32819',
     county: 'Orange County',
-    mapsUrl: 'https://maps.google.com/?q=7208+W+Sand+Lake+Rd+Suite+305+Orlando+FL+32819',
+    mapsUrl: 'https://maps.google.com/?q=7345+W+Sand+Lake+Rd+Suite+310+Orlando+FL+32819',
     notes: 'Individual, couples, and family counseling.',
   },
   {
@@ -57,9 +58,38 @@ const hours = [
   { day: 'Sunday', hours: 'Closed' },
 ]
 
+const siteUrl = 'https://www.eqcounselingtesting.com'
+
+function officeSchema(office: (typeof offices)[number]) {
+  const match = office.address.match(/^(.*), ([A-Za-z .]+), ([A-Z]{2}) (\d{5})$/)
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalBusiness',
+    name: `EQ Counseling & Testing — ${office.name}`,
+    parentOrganization: { '@type': 'MedicalBusiness', name: 'EQ Counseling & Testing LLC', url: siteUrl },
+    telephone: '+1-407-461-9721',
+    email: 'ronit@eqcounselingtesting.com',
+    url: `${siteUrl}/contact`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: match?.[1] ?? office.address,
+      addressLocality: match?.[2],
+      addressRegion: match?.[3] ?? 'FL',
+      postalCode: match?.[4],
+      addressCountry: 'US',
+    },
+    areaServed: office.county,
+  }
+}
+
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(offices.map(officeSchema)) }}
+      />
+
       <PageHero
         title="Contact Us"
         subtitle="We're here to answer your questions and help you take the first step toward better mental health."

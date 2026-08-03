@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Terms of Use',
   description:
     'Terms of Use for EQ Counseling & Testing LLC website and services. Please read these terms carefully before using our website.',
+  alternates: { canonical: '/terms' },
 }
 
 const sections = [

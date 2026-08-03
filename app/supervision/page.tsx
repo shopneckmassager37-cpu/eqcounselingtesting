@@ -7,11 +7,27 @@ export const metadata: Metadata = {
   title: 'Clinical Supervision',
   description:
     'Clinical supervision for Licensed Mental Health Counselors and Marriage & Family Therapists seeking Florida licensure. Group and individual formats available.',
+  alternates: { canonical: '/supervision' },
+}
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Clinical Supervision',
+  name: 'Clinical Supervision',
+  provider: { '@type': 'MedicalBusiness', name: 'EQ Counseling & Testing LLC', url: 'https://www.eqcounselingtesting.com' },
+  areaServed: 'Florida',
+  description:
+    'Clinical supervision for Licensed Mental Health Counselors and Marriage & Family Therapists seeking Florida licensure. Group and individual formats available.',
 }
 
 export default function SupervisionPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <PageHero
         title="Clinical Supervision"
         subtitle="Expert guidance for Mental Health and Marriage & Family Therapy graduates pursuing Florida licensure."
@@ -49,15 +65,15 @@ export default function SupervisionPage() {
                 <div className="flex items-center gap-3 text-sm text-neutral-700">
                   <Clock className="w-5 h-5 text-teal flex-shrink-0" />
                   <div>
-                    <span className="font-semibold">Session Length:</span>
-                    <span className="text-neutral-500 ml-1">90 minutes per session</span>
+                    <span className="font-semibold">Meets:</span>
+                    <span className="text-neutral-500 ml-1">Tuesday or Thursday, via telehealth</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-neutral-700">
                   <Users className="w-5 h-5 text-teal flex-shrink-0" />
                   <div>
                     <span className="font-semibold">Group Size:</span>
-                    <span className="text-neutral-500 ml-1">Small groups (max 6 supervisees)</span>
+                    <span className="text-neutral-500 ml-1">Small-cohort format</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-neutral-700">
@@ -106,15 +122,15 @@ export default function SupervisionPage() {
                 <div className="flex items-center gap-3 text-sm text-neutral-700">
                   <Clock className="w-5 h-5 text-primary flex-shrink-0" />
                   <div>
-                    <span className="font-semibold">Session Length:</span>
-                    <span className="text-neutral-500 ml-1">50–60 minutes per session</span>
+                    <span className="font-semibold">Meets:</span>
+                    <span className="text-neutral-500 ml-1">Tuesday or Thursday, via telehealth</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-neutral-700">
                   <User className="w-5 h-5 text-primary flex-shrink-0" />
                   <div>
                     <span className="font-semibold">Format:</span>
-                    <span className="text-neutral-500 ml-1">In-person or video supervision</span>
+                    <span className="text-neutral-500 ml-1">One-on-one video supervision</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-neutral-700">

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Client Forms',
   description:
     'Access client intake forms and paperwork for EQ Counseling & Testing. New client forms are available through our secure client portal.',
+  alternates: { canonical: '/forms' },
 }
 
 const formCategories = [

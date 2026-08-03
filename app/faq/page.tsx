@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
   description:
     'Answers to common questions about counseling, psychological assessments, insurance, teletherapy, and what to expect at EQ Counseling & Testing in Orlando, FL.',
+  alternates: { canonical: '/faq' },
 }
 
 const faqCategories = [

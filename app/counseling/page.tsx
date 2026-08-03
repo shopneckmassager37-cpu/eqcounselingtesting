@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Counseling Services',
   description:
     'Individual, couples, and family counseling for adults, teens, and children in Orlando, FL. Treatment for depression, anxiety, ADHD, PTSD, and more.',
+  alternates: { canonical: '/counseling' },
 }
 
 const counselingTypes = [
@@ -93,9 +94,24 @@ const conditions = [
   'Elder Care Issues',
 ]
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Counseling & Therapy',
+  name: 'Counseling Services',
+  provider: { '@type': 'MedicalBusiness', name: 'EQ Counseling & Testing LLC', url: 'https://www.eqcounselingtesting.com' },
+  areaServed: ['Orange County, FL', 'Seminole County, FL', 'Florida'],
+  description:
+    'Individual, couples, and family counseling for adults, teens, and children in Orlando, FL. Treatment for depression, anxiety, ADHD, PTSD, and more.',
+}
+
 export default function CounselingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <PageHero
         title="Counseling Services"
         subtitle="Compassionate, evidence-based therapy for individuals, couples, and families — in person or via teletherapy."

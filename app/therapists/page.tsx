@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: 'Our Therapists',
   description:
     'Meet the experienced, licensed therapists at EQ Counseling & Testing. Our diverse team specializes in counseling, psychological evaluations, and more.',
+  alternates: { canonical: '/therapists' },
 }
 
 export default function TherapistsPage() {
