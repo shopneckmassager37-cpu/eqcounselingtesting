@@ -1,110 +1,137 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Brain, BookOpen, Dna, Briefcase, User, Lightbulb, ChevronRight, CheckCircle } from 'lucide-react'
+import {
+  Brain,
+  Users,
+  Lightbulb,
+  BookOpen,
+  Dna,
+  User,
+  Scale,
+  ShieldAlert,
+  Stethoscope,
+  FileCheck,
+  Globe,
+  Briefcase,
+  ChevronRight,
+} from 'lucide-react'
 import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Assessments & Testing',
   description:
-    'Comprehensive psychological evaluations and testing at EQ Counseling & Testing in Orlando, FL. Academic, Intelligence, Autism, Career, and Personality assessments.',
+    'Comprehensive psychological evaluations and testing at EQ Counseling & Testing in Orlando, FL — mental health, psychosocial, ADHD, psychoeducational, ASD, personality, custody, substance abuse, pre-surgical, Social Security, immigration, and fit-for-duty evaluations.',
 }
 
-const assessmentTypes = [
+const serviceSections = [
   {
-    icon: BookOpen,
-    title: 'Academic Testing',
+    id: 'comprehensive-mental-health-assessment',
+    icon: Brain,
+    title: 'Comprehensive Mental Health Assessment',
     description:
-      'Identifies learning strengths and challenges to inform educational planning and qualify students for accommodations.',
-    includes: [
-      'Reading & Reading Comprehension',
-      'Mathematics Achievement',
-      'Written Language Skills',
-      'Oral Language Abilities',
-    ],
+      'A full clinical evaluation of emotional, behavioral, and cognitive functioning, used to establish an accurate diagnosis and guide an effective treatment plan.',
     iconColor: 'text-primary',
     iconBg: 'bg-primary/10',
   },
   {
-    icon: Brain,
-    title: 'Intelligence Testing (IQ)',
+    id: 'psychosocial-assessment',
+    icon: Users,
+    title: 'Psychosocial Assessment',
     description:
-      'Measures cognitive abilities, processing speed, memory, and reasoning for a clear picture of intellectual functioning.',
-    includes: [
-      'Cognitive Abilities Assessment',
-      'Processing Speed Evaluation',
-      'Working Memory Testing',
-      'Verbal & Non-Verbal Reasoning',
-    ],
+      'An in-depth review of personal history, relationships, and life circumstances to understand how social and environmental factors affect mental health and functioning.',
     iconColor: 'text-teal',
     iconBg: 'bg-teal/10',
   },
   {
+    id: 'adhd-screening',
     icon: Lightbulb,
-    title: 'DSM-5 Diagnostic Evaluation',
+    title: 'ADHD Screening',
     description:
-      'Clinical diagnosis of ADHD, Depression, Anxiety, Bipolar Disorder, and other conditions using current DSM-5 criteria.',
-    includes: [
-      'ADHD Evaluation (Adults & Children)',
-      'Depression & Anxiety Diagnosis',
-      'Bipolar Disorder Assessment',
-      'Substance Use Disorder Evaluation',
-    ],
+      'Standardized screening and clinical interviews to identify symptoms of ADHD in children and adults and determine appropriate next steps.',
     iconColor: 'text-secondary',
     iconBg: 'bg-secondary/10',
   },
   {
-    icon: Dna,
-    title: 'Autism / Spectrum Disorder',
+    id: 'psychoeducational-evaluation',
+    icon: BookOpen,
+    title: 'Psychoeducational Evaluation',
     description:
-      'Evidence-based ASD evaluations using behavioral observation protocols across home, school, and clinical settings.',
-    includes: [
-      'ADOS-2 Administration',
-      'Adaptive Behavior Assessment',
-      'Social Communication Evaluation',
-      'Parent & Teacher Interviews',
-    ],
+      'Testing that measures cognitive ability and academic achievement to identify learning strengths and challenges and support requests for school accommodations.',
+    iconColor: 'text-primary',
+    iconBg: 'bg-primary/10',
+  },
+  {
+    id: 'asd-autism-spectrum-disorder',
+    icon: Dna,
+    title: 'ASD - Autism/Spectrum Disorder',
+    description:
+      'Specialized evaluations for Autism Spectrum Disorder using evidence-based protocols, behavioral observation, and interviews with caregivers or teachers.',
     iconColor: 'text-accent-dark',
     iconBg: 'bg-accent/10',
   },
   {
-    icon: Briefcase,
-    title: 'Career Assessment',
+    id: 'personality-tests-mmpi',
+    icon: User,
+    title: 'Personality Tests - MMPI',
     description:
-      'Identify your strengths, interests, and aptitudes to guide career decisions — for students, career changers, and professionals.',
-    includes: [
-      'Interest Inventory',
-      'Skills & Aptitude Assessment',
-      'Personality-Career Fit',
-      'Values Clarification',
-    ],
+      'In-depth personality assessment using the MMPI and related instruments to evaluate emotional functioning and behavioral patterns for clinical or legal purposes.',
+    iconColor: 'text-rose-600',
+    iconBg: 'bg-rose-50',
+  },
+  {
+    id: 'custody-evaluation',
+    icon: Scale,
+    title: 'Custody Evaluation',
+    description:
+      'Objective, court-informed evaluations that assess parenting capacity and the best interests of the child in custody and family law matters.',
     iconColor: 'text-purple-600',
     iconBg: 'bg-purple-100',
   },
   {
-    icon: User,
-    title: 'Personality Assessment',
+    id: 'substance-abuse-evaluation',
+    icon: ShieldAlert,
+    title: 'Substance Abuse Evaluation',
     description:
-      'Evaluates behavioral patterns, emotional functioning, and psychological strengths for clinical, legal, and personal growth purposes.',
-    includes: [
-      'MMPI-3 Administration',
-      'Projective Techniques',
-      'Temperament Assessment',
-      'Emotional Functioning Review',
-    ],
+      'Clinical evaluations that assess substance use patterns and their impact on functioning, often required for legal, employment, or treatment purposes.',
+    iconColor: 'text-teal',
+    iconBg: 'bg-teal/10',
+  },
+  {
+    id: 'pre-treatment-surgical-evaluations',
+    icon: Stethoscope,
+    title: 'Pre Treatment/Surgical Evaluations',
+    description:
+      'Psychological readiness evaluations required before certain medical treatments or surgical procedures, such as bariatric surgery or organ transplant.',
+    iconColor: 'text-primary',
+    iconBg: 'bg-primary/10',
+  },
+  {
+    id: 'social-security-evaluation',
+    icon: FileCheck,
+    title: 'Social Security Evaluation',
+    description:
+      'Comprehensive psychological evaluations to support Social Security Disability (SSI/SSDI) claims with documentation that meets agency requirements.',
+    iconColor: 'text-secondary',
+    iconBg: 'bg-secondary/10',
+  },
+  {
+    id: 'immigration-comprehensive-evaluation',
+    icon: Globe,
+    title: 'Immigration Comprehensive Evaluation',
+    description:
+      'Psychological evaluations for immigration proceedings, including hardship and asylum cases, prepared to support legal filings.',
+    iconColor: 'text-accent-dark',
+    iconBg: 'bg-accent/10',
+  },
+  {
+    id: 'fit-for-duty-evaluation',
+    icon: Briefcase,
+    title: 'Fit for Duty Evaluation',
+    description:
+      'Independent evaluations that assess an employee’s psychological fitness to safely and effectively perform their job duties.',
     iconColor: 'text-rose-600',
     iconBg: 'bg-rose-50',
   },
-]
-
-const specializedEvaluations = [
-  'Juvenile Evaluations',
-  'Custody Case Assessments',
-  'SSI (Social Security Income) Evaluations',
-  'Pre-Surgical Psychological Assessments',
-  'Immigration Psychological Evaluations',
-  'Learning Disability Assessments',
-  'Substance Abuse Evaluations',
-  'Mental Health Diagnosis for Legal Purposes',
 ]
 
 export default function AssessmentsPage() {
@@ -129,10 +156,15 @@ export default function AssessmentsPage() {
             </p>
           </div>
 
-          {/* Assessment types grid */}
+          {/* Evaluation type sections */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {assessmentTypes.map(({ icon: Icon, title, description, includes, iconColor, iconBg }, i) => (
-              <div key={title} className="card p-8 flex flex-col reveal relative overflow-hidden" style={{ transitionDelay: `${i * 80}ms` }}>
+            {serviceSections.map(({ id, icon: Icon, title, description, iconColor, iconBg }, i) => (
+              <div
+                key={id}
+                id={id}
+                className="card p-8 flex flex-col reveal relative overflow-hidden scroll-mt-36"
+                style={{ transitionDelay: `${(i % 6) * 80}ms` }}
+              >
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-teal to-secondary opacity-50" />
                 <div className="relative w-14 h-14 mb-5">
                   <div className={`absolute -inset-1 ${iconBg} rounded-xl blur-md opacity-80`} />
@@ -142,45 +174,15 @@ export default function AssessmentsPage() {
                 </div>
                 <h3 className="font-heading font-bold text-lg text-neutral-800 mb-3">{title}</h3>
                 <p className="text-neutral-500 text-sm leading-relaxed mb-5 flex-1">{description}</p>
-                <div>
-                  <p className="text-xs font-semibold text-neutral-400 uppercase tracking-wide mb-2">Includes:</p>
-                  <ul className="space-y-1">
-                    {includes.map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm text-neutral-600">
-                        <CheckCircle size={13} className="text-secondary flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Specialized evaluations */}
-          <div className="bg-neutral-50 rounded-3xl p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <span className="badge bg-primary/10 text-primary mb-3">Specialized Services</span>
-                <h2 className="section-title mb-4">Forensic & Specialized Evaluations</h2>
-                <p className="text-neutral-500 leading-relaxed mb-6">
-                  Dr. Ronit Navon provides specialized psychological evaluations for legal, medical,
-                  and social service contexts, each resulting in a comprehensive written report.
-                </p>
-                <Link href="/contact" className="btn-primary">
-                  Request an Evaluation
-                  <ChevronRight size={18} />
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-dark transition-colors"
+                >
+                  Request This Evaluation
+                  <ChevronRight size={15} />
                 </Link>
               </div>
-              <div className="grid grid-cols-2 gap-3">
-                {specializedEvaluations.map((item) => (
-                  <div key={item} className="flex items-center gap-2 bg-white rounded-xl p-3 shadow-sm text-sm text-neutral-700">
-                    <CheckCircle size={15} className="text-primary flex-shrink-0" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Process */}

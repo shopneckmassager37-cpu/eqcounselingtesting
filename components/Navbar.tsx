@@ -3,11 +3,26 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown, Phone, Mail } from 'lucide-react'
+import { Menu, X, ChevronDown, ChevronRight, Phone, Mail } from 'lucide-react'
 import Logo from './Logo'
 
+const assessmentTypes = [
+  { label: 'Comprehensive Mental Health Assessment', href: '/assessments#comprehensive-mental-health-assessment' },
+  { label: 'Psychosocial Assessment', href: '/assessments#psychosocial-assessment' },
+  { label: 'ADHD Screening', href: '/assessments#adhd-screening' },
+  { label: 'Psychoeducational Evaluation', href: '/assessments#psychoeducational-evaluation' },
+  { label: 'ASD - Autism/Spectrum Disorder', href: '/assessments#asd-autism-spectrum-disorder' },
+  { label: 'Personality Tests - MMPI', href: '/assessments#personality-tests-mmpi' },
+  { label: 'Custody Evaluation', href: '/assessments#custody-evaluation' },
+  { label: 'Substance Abuse Evaluation', href: '/assessments#substance-abuse-evaluation' },
+  { label: 'Pre Treatment/Surgical Evaluations', href: '/assessments#pre-treatment-surgical-evaluations' },
+  { label: 'Social Security Evaluation', href: '/assessments#social-security-evaluation' },
+  { label: 'Immigration Comprehensive Evaluation', href: '/assessments#immigration-comprehensive-evaluation' },
+  { label: 'Fit for Duty Evaluation', href: '/assessments#fit-for-duty-evaluation' },
+]
+
 const services = [
-  { label: 'Assessments & Testing', href: '/assessments' },
+  { label: 'Assessments & Testing', href: '/assessments', children: assessmentTypes },
   { label: 'Counseling', href: '/counseling' },
   { label: 'Mediation', href: '/mediation' },
 ]
@@ -25,6 +40,7 @@ const navLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [mobileSubOpen, setMobileSubOpen] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
@@ -87,24 +103,65 @@ export default function Navbar() {
                     </button>
                     {/* Dropdown */}
                     <div
-                      className="absolute top-full left-0 mt-2 w-56 rounded-xl shadow-xl border border-neutral-100
+                      className="absolute top-full left-0 mt-2 w-64 rounded-xl shadow-xl border border-neutral-100
                                  opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
                                  transition-all duration-200 origin-top-left"
                       style={{ backgroundColor: '#FFFDF9' }}
                       role="menu"
                     >
                       <div className="p-1.5">
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className="flex items-center gap-2 px-3 py-2.5 text-sm text-neutral-700 rounded-lg hover:bg-primary-50 hover:text-primary transition-colors"
-                            role="menuitem"
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-teal/60" />
-                            {child.label}
-                          </Link>
-                        ))}
+                        {link.children.map((child) => {
+                          if ('children' in child && child.children) {
+                            return (
+                              <div key={child.href} className="relative group/sub">
+                                <Link
+                                  href={child.href}
+                                  className="flex items-center justify-between gap-2 px-3 py-2.5 text-sm text-neutral-700 rounded-lg hover:bg-primary-50 hover:text-primary transition-colors"
+                                  role="menuitem"
+                                >
+                                  <span className="flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-teal/60" />
+                                    {child.label}
+                                  </span>
+                                  <ChevronRight size={14} className="text-neutral-400" />
+                                </Link>
+                                {/* Nested flyout */}
+                                <div
+                                  className="absolute top-0 left-full ml-1 w-80 rounded-xl shadow-xl border border-neutral-100
+                                             opacity-0 invisible translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0
+                                             transition-all duration-200 origin-top-left max-h-[70vh] overflow-y-auto"
+                                  style={{ backgroundColor: '#FFFDF9' }}
+                                  role="menu"
+                                >
+                                  <div className="p-1.5">
+                                    {child.children.map((grandchild) => (
+                                      <Link
+                                        key={grandchild.href}
+                                        href={grandchild.href}
+                                        className="flex items-center gap-2 px-3 py-2.5 text-sm text-neutral-700 rounded-lg hover:bg-primary-50 hover:text-primary transition-colors"
+                                        role="menuitem"
+                                      >
+                                        <span className="w-1.5 h-1.5 rounded-full bg-secondary/60 flex-shrink-0" />
+                                        {grandchild.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            )
+                          }
+                          return (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className="flex items-center gap-2 px-3 py-2.5 text-sm text-neutral-700 rounded-lg hover:bg-primary-50 hover:text-primary transition-colors"
+                              role="menuitem"
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full bg-teal/60" />
+                              {child.label}
+                            </Link>
+                          )
+                        })}
                       </div>
                     </div>
                   </div>
@@ -151,7 +208,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`lg:hidden border-b border-neutral-100 shadow-lg overflow-hidden transition-all duration-300 ${
-          mobileOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+          mobileOpen ? 'max-h-[80vh] overflow-y-auto opacity-100' : 'max-h-0 opacity-0'
         }`}
         style={{ backgroundColor: '#FFFDF9' }}
         aria-hidden={!mobileOpen}
@@ -173,16 +230,59 @@ export default function Navbar() {
                   </button>
                   {mobileServicesOpen && (
                     <div className="pl-4 mt-1 space-y-1 border-l-2 border-primary-100 ml-3">
-                      {link.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="block px-3 py-2.5 text-sm text-neutral-600 hover:text-primary rounded-lg hover:bg-neutral-50 transition-colors"
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                      {link.children.map((child) => {
+                        if ('children' in child && child.children) {
+                          const isOpen = mobileSubOpen === child.label
+                          return (
+                            <div key={child.href}>
+                              <div className="flex items-center justify-between rounded-lg hover:bg-neutral-50">
+                                <Link
+                                  href={child.href}
+                                  className="flex-1 px-3 py-2.5 text-sm text-neutral-600 hover:text-primary transition-colors"
+                                  onClick={() => setMobileOpen(false)}
+                                >
+                                  {child.label}
+                                </Link>
+                                <button
+                                  onClick={() => setMobileSubOpen(isOpen ? null : child.label)}
+                                  className="px-3 py-2.5 text-neutral-400"
+                                  aria-label={`Toggle ${child.label} submenu`}
+                                  aria-expanded={isOpen}
+                                >
+                                  <ChevronDown
+                                    size={14}
+                                    className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                                  />
+                                </button>
+                              </div>
+                              {isOpen && (
+                                <div className="pl-4 space-y-1 border-l-2 border-secondary/20 ml-3">
+                                  {child.children.map((grandchild) => (
+                                    <Link
+                                      key={grandchild.href}
+                                      href={grandchild.href}
+                                      className="block px-3 py-2 text-xs text-neutral-500 hover:text-primary rounded-lg hover:bg-neutral-50 transition-colors"
+                                      onClick={() => setMobileOpen(false)}
+                                    >
+                                      {grandchild.label}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          )
+                        }
+                        return (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="block px-3 py-2.5 text-sm text-neutral-600 hover:text-primary rounded-lg hover:bg-neutral-50 transition-colors"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {child.label}
+                          </Link>
+                        )
+                      })}
                     </div>
                   )}
                 </div>

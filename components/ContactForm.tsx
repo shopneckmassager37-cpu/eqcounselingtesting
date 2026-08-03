@@ -17,27 +17,43 @@ type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setStatus('submitting')
+    setErrorMessage('')
+
     const form = e.currentTarget
-    const data = new FormData(form)
+    const formData = new FormData(form)
+    const payload = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      service: formData.get('service'),
+      message: formData.get('message'),
+    }
 
     try {
-      const res = await fetch('https://formspree.io/f/xdkodopj', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       })
-      if (res.ok) {
-        setStatus('success')
-        form.reset()
-      } else {
+      const data = await res.json()
+
+      if (!res.ok) {
         setStatus('error')
+        setErrorMessage(data.error || 'Something went wrong. Please try again or call us at 407-461-9721.')
+        return
       }
+
+      setStatus('success')
+      form.reset()
     } catch {
       setStatus('error')
+      setErrorMessage('Something went wrong. Please try again or call us at 407-461-9721.')
     }
   }
 
@@ -146,7 +162,7 @@ export default function ContactForm() {
       {status === 'error' && (
         <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 border border-red-200 rounded-xl px-4 py-3">
           <AlertCircle size={16} className="flex-shrink-0" />
-          Something went wrong. Please try again or call us at 407-461-9721.
+          {errorMessage}
         </div>
       )}
 
