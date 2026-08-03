@@ -372,7 +372,9 @@ export default function AssessmentsPage() {
                 <div
                   key={id}
                   id={id}
-                  className="rounded-[2rem] border border-neutral-100 bg-neutral-50/60 p-6 md:p-10 lg:p-12 scroll-mt-36"
+                  className={`rounded-[2rem] border border-neutral-100 bg-neutral-50/60 p-6 md:p-10 lg:p-12 scroll-mt-36 ${
+                    imageOnRight ? 'reveal-right' : 'reveal-left'
+                  }`}
                 >
                   <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
                     <div className={imageOnRight ? 'lg:order-2' : ''}>
