@@ -72,7 +72,6 @@ function HeroSection() {
 
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.08] text-white mb-5">
               Empowering<br />
-              <span className="text-purple-200">Mental</span>{' '}
               <span className="text-teal-light">Wellness</span>
             </h1>
 
